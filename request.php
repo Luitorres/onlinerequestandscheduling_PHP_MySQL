@@ -46,7 +46,7 @@ if(!isset($_SESSION['name'])){
 
 
 
-    <a href="index.php" class="back-link">
+    <a href="user.php" class="back-link">
         <span class="back-icon">&lt;</span>
     </a>
 

@@ -13,10 +13,9 @@
 }
 body{
     overflow-x: hidden;
-    background: url(images/barangay.jpg);
+    background:  url(images/barangay.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
 
@@ -119,9 +118,9 @@ nav a:hover {
 
 .container {
     width: 50%;
-    height: 150%;
+    height: 100%;
     background-color: white;
-    opacity: 0.6;
+    opacity: 0.8;
     position: absolute;
     left: 0;
     top: 0;
@@ -139,7 +138,7 @@ nav a:hover {
     width: 550px;
     height: 150px;
     left: 5%;
-    top: 320px;
+    top: 45%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 400;
     font-size: 25px;
@@ -148,13 +147,13 @@ nav a:hover {
     align-items: center;
 
 }
-
+/*
 .p-2 {
     position: absolute;
     width: 495px;
     height: 150px;
     left: 5%;
-    top: 600px;
+    top: 60%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -162,14 +161,13 @@ nav a:hover {
     line-height: 25px;
     display: flex;
     align-items: center;
-}
+} */
+
 
 .h-1 {
     position: absolute;
-    width: 650px;
-    height: 133px;
-    left: 54%;
-    top: 360px;
+    left: 52%;
+    top: 40%;
     font-style: normal;
     font-family: 'futura';
     font-weight: 400;
@@ -180,7 +178,7 @@ nav a:hover {
     color: black;
 
 }
-
+/*
 .h-2 {
     position: absolute;
     width: 569px;
@@ -194,14 +192,12 @@ nav a:hover {
     line-height: 40px;
     display: flex;
     align-items: center;
-}
+} */
 
 .p-3 {
     position: absolute;
-    width: 569px;
-    height: 133px;
-    left: 54%;
-    top: 475px;
+    left: 52%;
+    top: 52%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: normal;
     font-size: 24px;
@@ -217,8 +213,8 @@ button {
     position: absolute;
     width: 196px;
     height: 54px;
-    left: 55%;
-    top: 580px;
+    left: 52%;
+    top: 58%;
     background: #2B65EC;
     border-radius: 100px;
     color: white;
@@ -241,8 +237,8 @@ button:hover {
     position: absolute;
     width: 308px;
     height: 356px;
-    left: 300px;
-    top: 335px;
+    left: 22.8%;
+    top: 30%;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -276,8 +272,8 @@ button:hover {
     background: rgba(33, 33, 33, 0.5);
     border: 2px solid #000000;
     border-radius: 10px;
-    top: 93%;
-    left:24.3%;
+    top: 72%;
+    left: 25%;
     align-items: center;
     text-align: center;
     color: black;
@@ -298,8 +294,8 @@ button:hover {
     position: absolute;
     width: 308px;
     height: 356px;
-    left: 54%;
-    top: 335px;
+    right: 22.8%;
+    top: 30%;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -331,8 +327,8 @@ button:hover {
     background: rgba(33, 33, 33, 0.5);
     border: 2px solid #000000;
     border-radius: 10px;
-    top: 93%;
-    left: 56%;
+    top: 72%;
+    right: 25%;
     align-items: center;
     text-align: center;
     color: black;

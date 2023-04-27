@@ -56,9 +56,7 @@ if(!isset($_SESSION['name'])){
         dignified and world class officials and
         employees who are working together
         towards the fulfillment of our collective
-        goal.
-    </p>
-    <p class="p-2">
+        goal.<br><br><br><br>
         We commit to ensure an efficient City
         Government, sustained by dignified and
         competent officials and employees working
@@ -68,12 +66,10 @@ if(!isset($_SESSION['name'])){
     </p>
 
     <h1 class="h-1">
-        WELCOME TO MAPULANG SOIL
-    </h1>
-
-    <h1 class="h-2">
+        WELCOME TO MAPULANG SOIL<br>
         ONLINE REQUEST.
     </h1>
+    
     <p class="p-3">
         3004 Sto. Rosario St. Mapulang Lupa, Valenzuela.
     </p>
