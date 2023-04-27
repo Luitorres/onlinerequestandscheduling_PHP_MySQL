@@ -4,7 +4,7 @@
 
 session_start();
 
-if(!isset($_SESSION['user_name'])){
+if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
@@ -37,8 +37,8 @@ if(!isset($_SESSION['user_name'])){
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
-                <li><a href="login.php">LOGOUT</a></li>
+                <li><a href="#">CONTACT</a></li>        
+                <li><a href="logout.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>

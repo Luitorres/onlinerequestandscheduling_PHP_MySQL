@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php
+
+@include 'config.php';
+
+session_start();
+
+if(!isset($_SESSION['name'])){
+   header('location:Login.php');
+};
+
+
+
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
