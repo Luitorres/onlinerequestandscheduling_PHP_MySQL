@@ -6,11 +6,11 @@ if(isset($_POST['submit'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
+   $pass = mysqli_real_escape_string($conn,$_POST['password']);
+   $cpass = mysqli_real_escape_string($conn,$_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $select = " SELECT * FROM users WHERE email = '$email' && password = '$pass' ";
 
    $result = mysqli_query($conn, $select);
 
@@ -23,7 +23,8 @@ if(isset($_POST['submit'])){
       if($pass != $cpass){
          $error[] = 'password not matched!';
       }else{
-         $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
+         $hash = password_hash($password, PASSWORD_DEFAULT);
+         $insert = "INSERT INTO users(name, email, password, user_type) VALUES('$name','$email','$hash','$user_type')";
          mysqli_query($conn, $insert);
          header('location:Login.php');
       }
