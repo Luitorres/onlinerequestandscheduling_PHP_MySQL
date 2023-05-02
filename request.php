@@ -34,11 +34,11 @@ if(!isset($_SESSION['name'])){
         </div>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="user.php">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="request.php">SERVICES</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>

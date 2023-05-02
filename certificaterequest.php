@@ -9,9 +9,8 @@ if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
-
-
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,11 +30,11 @@ if(!isset($_SESSION['name'])){
         </div>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="user.php">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="request.php">SERVICES</a></li>
+                <li><a href="#">CONRACT</a></li>
+                <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
@@ -46,22 +45,29 @@ if(!isset($_SESSION['name'])){
         <span class="back-icon">&lt;</span>
     </a>
 
-
+    <div class="CertificateListBG">
     <div class="CertificateRequest">
         <h2 class="namerequest">
             Certificate Request
         </h2>
-        <hr class="lining2">
 
-        <a href="barangayclearance.php" class="brgyclearance">Barangay Clearance</a>
-        <a href="barangayid.php" class="brgyid">Barangay ID</a>
-        <a href="baranggayclearance.php" class="brgypermit">Barangay Business Permit</a>
-        <a href="goodmoral.php" class="brgycharacter">Barangay Certificate of Good Moral Character</a>
-        <a href="barangayresidency.php" class="brgyresidency">Barangay of Residency</a>
-        <a href="barangayindigency.php" class="brgyindigency">Barangay Indigency</a>
-        <a href="baranggayclearance.php" class="brgyhealth">Barangay Health Certificate</a>
-        <a href="barangaycedula.php" class="brgycedula">Barangay Cedula</a>
+        <hr class="lining">
+
+        <div class="CertificateList">
+            <ul>
+                <a href="barangayclearance.php" >Barangay Clearance</a><br><br>
+                <a href="barangayid.php" >Barangay ID</a><br><br>
+                <a href="goodmoral.php" >Barangay Certificate of Good Moral Character</a><br><br>
+                <a href="barangayresidency.php" >Barangay of Residency</a><br><br>
+                <a href="barangayindigency.php" >Barangay Indigency</a><br><br>
+                <a href="barangaycedula.php" >Barangay Cedula</a>
+                <!-- <a href="baranggayclearance.php" class="brgyhealth">Barangay Health Certificate</a> -->
+                <!-- <a href="baranggayclearance.php" class="brgypermit">Barangay Business Permit</a> -->
+            </ul>
+        </div>           
     </div>
+    </div>
+
 </body>
 
 </html>

@@ -60,32 +60,29 @@ if(isset($_POST['Submit'])){
             <ul>
                 <li><a href="user.php">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
+                <li><a href="request.php">SERVICES</a></li>
                 <li><a href="#">CONTACT</a></li>
-                <li><a href="logout.php">LOGOUT</a></li>
+                <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
-
-    <img src="images/barangay.jpg" alt="barangaypic" class="imageclearance">
 
     <a href="certificaterequest.php" class="back-link">
         <span class="back-icon">&lt;</span>
     </a>
 
+    <div class="clearanceformBG">
     <div class="clearanceform">
-        <h2 class="nameclearance">
+        <h2 class="namerequest">
             Barangay Cedula
-
         </h2>
+        
         <hr class="lining">
 
-        <h2 class="info">
-            Personal Information
-        </h2>
-
-
         <form action="# " method="post">
+            <h2 class="info">
+                Personal Information
+            </h2>
             <label for="fname" id="firstname">First Name: </label><br>
             <input type="text" name= "fname" id="fname" ><br><br>
 
@@ -186,6 +183,7 @@ if(isset($_POST['Submit'])){
         </p>
 
 
+    </div>
     </div>
 </body>
 

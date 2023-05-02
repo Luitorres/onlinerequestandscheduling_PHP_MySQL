@@ -1,4 +1,3 @@
-
 <?php
 
 @include 'config.php';
@@ -9,9 +8,33 @@ if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
+if(isset($_POST['Submit'])){
 
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $mname = $_POST['mname'];
+    $sname = $_POST['sname'];
+    $nbirthday = $_POST['bday'];
+    $placeofbirth = $_POST['placeofbirth'];
+    $civil = $_POST['civilstatus'];
+    $sex = $_POST['sex'];
+    $nationality = $_POST['Nationality'];
+    $pwd = $_POST['PWD'];
+    $occupation = $_POST['Occupation'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $street = $_POST['street'];
+    $message = $_POST['message'];
+    
+    
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_goodmoral`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `message`) 
+    VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$message')");
+     
+}
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,23 +56,22 @@ if(!isset($_SESSION['name'])){
         </div>
         <nav>
             <ul>
-                <li><a href="index.php">HOME</a></li>
+                <li><a href="user.php">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
+                <li><a href="request.php">SERVICES</a></li>
                 <li><a href="#">CONTACT</a></li>
-                <li><a href="logout.php">LOGOUT</a></li>
+                <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
-
-    <img src="images/barangay.jpg" alt="barangaypic" class="imageclearance">
 
     <a href="certificaterequest.php" class="back-link">
         <span class="back-icon">&lt;</span>
     </a>
 
+    <div class="clearanceformBG">
     <div class="clearanceform">
-        <h2 class="nameclearance">
+        <h2 class="namerequest">
             Barangay Certificate of Good Moral Character
 
         </h2>
@@ -60,48 +82,48 @@ if(!isset($_SESSION['name'])){
         </h2>
 
 
-        <form action="" method="">
+        <form action="# " method="post">
             <label for="fname" id="firstname">First Name: </label><br>
-            <input type="text" id="fname" required><br><br>
+            <input type="text" name= "fname" id="fname" ><br><br>
 
             <label for="lname" id="lastname">Last Name: </label><br>
-            <input type="text" id="lname" required><br><br>
+            <input type="text" name= "lname" id="lname" ><br><br>
 
             <label for="mname" id="middlename">Middle Name: </label><br>
-            <input type="text" id="mname" required><br><br>
+            <input type="text" name= "mname" id="mname" ><br><br>
 
             <label for="sname" id="suffixname">Suffix Name: </label><br>
-            <input type="text" id="sname" required><br><br>
+            <input type="text" name= "sname" id="sname" ><br><br>
 
-            <label for="birthday" id="bday">Birthday: </label><br>
-            <input type="date" id="birthday" required><br><br>
+            <label for="nbirthday" id="bday">Birthday: </label><br>
+            <input type="text" name="bday" id="nbirthday" ><br><br>
 
             <label for="placeofbirth" id="birth">Place of Birth: </label><br>
-            <input type="text" id="placeofbirth" required><br><br>
+            <input type="text" name= "placeofbirth" id="placeofbirth" ><br><br>
 
             <label for="civilstatus" id="civil">Civil Status: </label><br>
-            <input type="text" id="civilstatus" required><br><br>
+            <input type="text" name="civilstatus" id="civilstatus" ><br><br>
 
             <label for="sex" id="gender">Sex: </label><br>
-            <input type="text" id="sex" required><br><br>
+            <input type="text" name="sex" id="sex" ><br><br>
 
             <label for="Nationality" id="national">Nationality: </label><br>
-            <input type="text" id="Nationality" required><br><br>
+            <input type="text" name="Nationality" id="Nationality" ><br><br>
 
             <label for="PWD" id="pd">PWD: </label><br>
-            <input type="text" id="PWD" placeholder="YES/NO" required><br><br>
+            <input type="text" name="PWD" id="PWD" placeholder="YES/NO" ><br><br>
 
             <label for="Occupation" id="occup">Occupation: </label><br>
-            <input type="text" id="Occupation" required><br><br>
+            <input type="text" id="Occupation" name= "Occupation" ><br><br>
 
             <label for="phone" id="cp">Contact No:</label>
-            <input type="tel" id="phone" name="phone" pattern="^(09|\+639)\d{9}$" required>
+            <input type="tel" id="phone" name="phone" pattern="^(09|\+639)\d{9}$" >
 
             <label for="email" id="eadd">Email Address (Optional):</label>
             <input type="email" id="email" name="email">
 
             <label for="address" id="add"> Address:</label>
-            <input type="text" id="address" name="address" required>
+            <input type="text" id="address" name="address" >
 
             <label for="street" id="Strt">Street:</label>
             <select id="street" name="street">
@@ -141,10 +163,8 @@ if(!isset($_SESSION['name'])){
                 <option value="Sto Rosario St ">Sto Rosario St </option>
                 <option value="Servando St.">Servando St.</option>
             </select>
-
-            <input type="text" name="textbox1" id="txtbox1">
-            <input type="text" name="textbox2" id="txtbox2">
-
+           
+            
 
 
             <label for="message" id="msg">Message(Optional:)</label>
@@ -163,6 +183,7 @@ if(!isset($_SESSION['name'])){
         </p>
 
 
+    </div>
     </div>
 </body>
 

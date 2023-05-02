@@ -1,3 +1,13 @@
+<?php
+
+@include 'config.php';
+
+session_start();
+session_unset();
+session_destroy();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +31,11 @@
 
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="login.php">SERVICES</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="login.php">LOGIN</a></li>
             </ul>
         </nav>
     </header>

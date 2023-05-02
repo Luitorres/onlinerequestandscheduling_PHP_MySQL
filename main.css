@@ -14,9 +14,10 @@
 body{
     overflow-x: hidden;
     background:  url(images/barangay.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
-
+    min-height: 100%;
+    bottom: 20%;
+    box-sizing: border-box;
 }
 
 
@@ -84,12 +85,11 @@ nav a:hover {
     border: 1px solid #333;
     border-radius: 50px;
     position: absolute;
-    top: 25%;
+    top: 20%;
     height: 50px;
     width: 50px;
     left: 5%;
     transition: 0.20s;
-
 }
 
 .back-link:hover {
@@ -100,16 +100,15 @@ nav a:hover {
     display: inline-block;
     font-size: 1.5rem;
     margin-right: 0.5rem;
-
 }
 
 
-
+/*
 .imageclearance {
-    width: 100%;
-    height: 200vh;
+    width: auto;
+    height: ;
     opacity: 0.6;
-}
+} */
 
 .imageid {
     width: 100%;
@@ -346,16 +345,19 @@ button:hover {
     background-color: rgba(43, 101, 236, 0.5);
 }
 
+.CertificateListBG {
+    height: 800px;
+}
+
 .CertificateRequest {
     position: absolute;
     width: 80%;
     height: 606px;
     left: 10%;
-    top: 25%;
+    top: 20%;
     background: #FFFFFF;
     border-radius: 10px;
     text-decoration: none;
-
 }
 
 .namerequest {
@@ -369,144 +371,25 @@ button:hover {
     font-family: Arial, Helvetica, sans-serif;
     color: #000000;
     position: absolute;
-    top: 3%;
+    top: 15px;
     left: 3%;
 }
 
+.CertificateList {
+    margin-top: 10%;
+    margin-left: 5%;
+}
 
-
-.brgyclearance {
+.CertificateList a {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
-    font-size: 28px;
-    color: #909090;
-    position: absolute;
-    top: 23%;
-    left: 7%;
-}
-
-.brgyclearance:hover {
-    color: rgba(43, 101, 236, 0.5);
-}
-
-.brgyid {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 28px;
-    color: #909090;
-    position: absolute;
-    top: 30%;
-    left: 6.80%;
-}
-
-.brgyid:hover {
-    color: rgba(43, 101, 236, 0.5);
-}
-
-.brgypermit {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 28px;
-    color: #909090;
-    position: absolute;
-    top: 37%;
-    left: 6.70%;
-}
-
-.brgypermit:hover {
-    color: rgba(43, 101, 236, 0.5);
-}
-
-.brgycharacter {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 28px;
-    color: #909090;
-    position: absolute;
-    top: 44%;
-    left: 6.70%;
-}
-
-.brgycharacter:hover {
-    color: rgba(43, 101, 236, 0.5);
-}
-
-.brgyresidency {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 28px;
-    color: #909090;
-    position: absolute;
-    top: 51%;
-    left: 6.60%;
-}
-
-.brgyresidency:hover {
-    color: rgba(43, 101, 236, 0.5);
-}
-
-.brgyindigency {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 28px;
-    color: #909090;
-    position: absolute;
-    top: 58%;
-    left: 6.60%;
-}
-
-.brgyindigency:hover {
-    color: rgba(43, 101, 236, 0.5);
-}
-
-.brgyhealth {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 28px;
-    color: #909090;
-    position: absolute;
-    top: 23%;
-    left: 58%;
-}
-
-.brgyhealth:hover {
-    color: rgba(43, 101, 236, 0.5);
-}
-
-.brgycedula {
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 28px;
-    color: #909090;
-    position: absolute;
-    top: 30%;
-    left: 58%;
-}
-
-.brgycedula:hover {
-    color: rgba(43, 101, 236, 0.5);
-}
-
-.nameclearance {
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
     font-size: 35px;
-    line-height: 46px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    position: absolute;
-    top: 3%;
-    left: 3%;
+    color: #909090;
+}
+
+.CertificateList a:hover {
+    color: rgba(43, 101, 236, 0.5);
 }
 
 .info {
@@ -519,9 +402,10 @@ button:hover {
     align-items: center;
     color: #000000;
     position: absolute;
-    top: 9%;
+    top: 7%;
     left: 3%;
 }
+
 
 .infoid {
     font-family: 'Arial';
@@ -535,63 +419,55 @@ button:hover {
     position: absolute;
     top: 8%;
     left: 3%;
+} 
+
+
+.clearanceformBG{
+    height: 1300px;
 }
+
 
 .clearanceform {
     position: absolute;
-    width: 1096px;
+    width: 80%;
     height: 1100px;
-    left: 15%;
-    top: 25%;
+    left: 10%;
+    top: 20%;
+    bottom: 10%;
     background: #FFFFFF;
-    border-radius: 10px;
-
+    border-radius: 10px;  
 }
 
 .clearanceform form {
     position: relative;
-    top: 5%;
+    top: 3%;
+}
+
+.clearanceformidBG {
+    height: 1500px;
 }
 
 .clearanceformid {
     position: absolute;
-    width: 1096px;
+    width: 80%;
     height: 1300px;
-    left: 400px;
-    top: 290px;
+    left: 10%;
+    top: 20%;
     background: #FFFFFF;
     border-radius: 10px;
-
 }
 
 .lining {
     position: absolute;
-    top: 7%;
+    top: 70px;
     width: 96%;
     left: 2%;
     border: 1px solid #212121;
 }
-
-.lining2 {
-    position: absolute;
-    top: 10%;
-    width: 96%;
-    left: 2%;
-    border: 1px solid #212121;
-}
-
-.lining3 {
-    position: absolute;
-    top: 6.50%;
-    width: 96%;
-    left: 2%;
-    border: 1px solid #212121;
-}
-
 
 #fname {
     position: absolute;
-    width: 250px;
+    width: 28%;
     height: 50px;
     left: 3%;
     top: 20%;
@@ -620,9 +496,9 @@ button:hover {
 
 #lname {
     position: absolute;
-    width: 250px;
+    width: 25%;
     height: 50px;
-    left: 28%;
+    left: 32%;
     top: 20%;
     background: rgba(204, 204, 204, 0.85);
     border: 0;
@@ -634,7 +510,7 @@ button:hover {
     position: absolute;
     width: 98px;
     height: 23px;
-    left: 29%;
+    left: 33%;
     top: 15%;
     font-family: 'Arial';
     font-style: normal;
@@ -648,9 +524,9 @@ button:hover {
 
 #mname {
     position: absolute;
-    width: 250px;
+    width: 25%;
     height: 50px;
-    left: 53%;
+    left: 58%;
     top: 20%;
     background: rgba(204, 204, 204, 0.85);
     border: 0;
@@ -663,7 +539,7 @@ button:hover {
     position: absolute;
     width: 120px;
     height: 23px;
-    left: 54%;
+    left: 59%;
     top: 15%;
     font-family: 'Arial';
     font-style: normal;
@@ -677,9 +553,9 @@ button:hover {
 
 #sname {
     position: absolute;
-    width: 150px;
+    width: 13%;
     height: 50px;
-    left: 78%;
+    left: 84%;
     top: 20%;
     background: rgba(204, 204, 204, 0.85);
     border: 0;
@@ -691,7 +567,7 @@ button:hover {
     position: absolute;
     width: 101px;
     height: 23px;
-    left: 79%;
+    left: 85%;
     top: 15%;
     font-family: 'Arial';
     font-style: normal;
@@ -707,7 +583,7 @@ button:hover {
     position: absolute;
     width: 78px;
     height: 20px;
-    left: 43px;
+    left: 4%;
     top: 190px;
     font-family: 'Arial';
     font-style: normal;
@@ -720,9 +596,9 @@ button:hover {
 
 #nbirthday {
     position: absolute;
-    width: 200px;
+    width: 20%;
     height: 50px;
-    left: 35px;
+    left: 3%;
     top: 220px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
@@ -735,7 +611,7 @@ button:hover {
     width: 130px;
     height: 23px;
     left: 24%;
-    top: 32%;
+    top: 190px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -748,9 +624,9 @@ button:hover {
 
 #placeofbirth {
     position: absolute;
-    width: 300px;
+    width: 30%;
     height: 50px;
-    left: 260px;
+    left: 24%;
     top: 220px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
@@ -763,7 +639,7 @@ button:hover {
     width: 101px;
     height: 23px;
     left: 54%;
-    top: 32%;
+    top: 190px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -777,10 +653,10 @@ button:hover {
 
 #civilstatus {
     position: absolute;
-    width: 250px;
+    width: 25%;
     height: 50px;
-    left: 53%;
-    top: 36.20%;
+    left: 55%;
+    top: 220px;
     background: rgba(204, 204, 204, 0.85);
     border: 0;
     border-radius: 10px;
@@ -793,7 +669,7 @@ button:hover {
     width: 101px;
     height: 23px;
     left: 79%;
-    top: 32%;
+    top: 190px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -809,7 +685,7 @@ button:hover {
     width: 150px;
     height: 50px;
     left: 78%;
-    top: 36.10%;
+    top: 220px;
     background: rgba(204, 204, 204, 0.85);
     border: 0;
     border-radius: 10px;
@@ -1959,7 +1835,7 @@ textarea {
     width: 80%;
     height: 606px;
     left: 10%;
-    top: 25%;
+    top: 20%;
     background: #FFFFFF;
     border-radius: 10px;
     text-decoration: none;

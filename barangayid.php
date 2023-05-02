@@ -8,9 +8,46 @@ if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
+if(isset($_POST['Submit'])){
+
+    $fname = $_POST['fnameid'];
+    $lname = $_POST['lnameid'];
+    $mname = $_POST['mnameid'];
+    $sname = $_POST['snameid'];
+    $nbirthday = $_POST['birthdayid'];
+    $placeofbirth = $_POST['placeofbirthid'];
+    $civil = $_POST['civilstatusid'];
+    $sex = $_POST['sexid'];
+    $nationality = $_POST['Nationalityid'];
+    $pwd = $_POST['PWDid'];
+    $occupation = $_POST['Occupationid'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $address = $_POST['addressid'];
+    $street = $_POST['streetid'];
+    $tin = $_POST['TIN'];
+    $blood = $_POST['bloodtypeid'];
+    $efname = $_POST['firstname'];
+    $elname = $_POST['lastname'];
+    $emname = $_POST['middlename'];
+    $econtact = $_POST['phoneinfo'];
+    $esname = $_POST['suffixname'];
+    $erelationship = $_POST['relationship'];
+    $eaddress = $_POST['address'];
+    $message = $_POST['message'];
+
+    
+    
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_id`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `tin`, `blood_type`, `emergency_first_name`, `emergency_last_name`, `emergency_middle_name`, `emergency_contact`, `emergency_suffix_name`, `emergency_relationship`, `emergency_address`, `message`) 
+    VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street', '$tin', '$blood', '$efname', '$elname', '$emname', '$econtact', '$esname', '$erelationship', '$eaddress', '$message')");
+     
 
 
-?><!DOCTYPE html>
+     
+}
+
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,70 +68,63 @@ if(!isset($_SESSION['name'])){
 
         <nav>
             <ul>
-                <li><a href="#">HOME</a></li>
+                <li><a href="user.php">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
+                <li><a href="request.php">SERVICES</a></li>
                 <li><a href="#">CONTACT</a></li>
-                <li><a href="logout.php">LOGOUT</a></li>
+                <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
 
-
-    <img src="images/barangay.jpg" alt="barangaypic" class="imageid">
-
-    <a href="index.php" class="back-link">
+    <a href="certificaterequest.php" class="back-link">
         <span class="back-icon">&lt;</span>
     </a>
 
-
-
+    <div class="clearanceformidBG">
     <div class="clearanceformid">
-        <h2 class="nameclearance">
+        <h2 class="namerequest">
             Barangay Id
         </h2>
 
-        <hr class="lining3">
+        <hr class="lining">
 
-        <h2 class="infoid">
-            Personal Information
-        </h2>
-
-
-
-        <form action="" method="">
+        <form action="# " method="post">
+            <h2 class="infoid">
+                Personal Information
+            </h2>
             <label for="fnameid" id="firstnameid">First Name: </label><br>
-            <input type="text" id="fnameid" required><br><br>
+            <input type="text" id="fnameid" name="fnameid" required><br><br>
 
             <label for="lnameid" id="lastnameid">Last Name: </label><br>
-            <input type="text" id="lnameid" required><br><br>
+            <input type="text" id="lnameid" name="lnameid" required><br><br>
 
             <label for="mnameid" id="middlenameid">Middle Name: </label><br>
-            <input type="text" id="mnameid" required><br><br>
+            <input type="text" id="mnameid" name="mnameid" required><br><br>
 
             <label for="snameid" id="suffixnameid">Suffix Name: </label><br>
-            <input type="text" id="snameid" required><br><br>
+            <input type="text" id="snameid" name="snameid" required><br><br>
 
             <label for="birthdayid" id="bdayid">Birthday: </label><br>
-            <input type="date" id="birthdayid" required><br><br>
+            <input type="text" id="birthdayid" name="birthdayid" required><br><br>
 
             <label for="placeofbirth" id="birthid">Place of Birth: </label><br>
-            <input type="text" id="placeofbirthid" required><br><br>
+            <input type="text" id="placeofbirthid" name="placeofbirthid" required><br><br>
 
             <label for="civilstatusid" id="civilid">Civil Status: </label><br>
-            <input type="text" id="civilstatusid" required><br><br>
+            <input type="text" id="civilstatusid" name="civilstatusid" required><br><br>
 
             <label for="sexid" id="genderid">Sex: </label><br>
-            <input type="text" id="sexid" required><br><br>
+            <input type="text" id="sexid" name="sexid" required><br><br>
 
             <label for="Nationalityid" id="nationalid">Nationality: </label><br>
-            <input type="text" id="Nationalityid" required><br><br>
+            <input type="text" id="Nationalityid" name="Nationalityid" required><br><br>
 
             <label for="PWDid" id="pdid">PWD: </label><br>
-            <input type="text" id="PWDid" placeholder="YES/NO" required><br><br>
+            <input type="text" id="PWDid" name="PWDid" placeholder="YES/NO" required><br><br>
 
             <label for="bloodtypeid" id="bdtypeid">Blood Type: </label><br>
-            <input type="text" id="bloodtypeid" required><br><br>
+            <input type="text" id="bloodtypeid" name="bloodtypeid" required><br><br>
 
             <label for="phoneid" id="cpid">Contact No:</label>
             <input type="tel" id="phoneid" name="phone" pattern="^(09|\+639)\d{9}$" required>
@@ -103,7 +133,7 @@ if(!isset($_SESSION['name'])){
             <input type="email" id="emailid" name="email">
 
             <label for="addressid" id="addid"> Address:</label>
-            <input type="text" id="addressid" name="address" required>
+            <input type="text" id="addressid" name="addressid" required>
 
 
 
@@ -154,7 +184,7 @@ if(!isset($_SESSION['name'])){
 
 
             <label for="Occupationid" id="occupid"> Occupation:</label>
-            <input type="text" id="Occupationid" name="Occupation" required>
+            <input type="text" id="Occupationid" name="Occupationid" required>
 
 
             <h2 class="emergencyinfo">
@@ -178,7 +208,7 @@ if(!isset($_SESSION['name'])){
             <input type="text" id="suffixnameinfo" name="suffixname" required>
 
             <label for="phoneninfo" id="cpinfo"> Contact No:</label>
-            <input type="text" id="phoneinfo" name="phone" pattern="^(09|\+639)\d{9}$" required>
+            <input type="text" id="phoneinfo" name="phoneinfo" pattern="^(09|\+639)\d{9}$" required>
 
             <label for="relationshipinfo" id="relationinfo"> Relationship:</label>
             <input type="text" id="relationshipinfo" name="relationship" required>
@@ -201,6 +231,7 @@ if(!isset($_SESSION['name'])){
             <input type="button" id="cancelid" value="CANCEL" onclick="window.location='user.php'" />
             <input type="submit" name="Submit" id="submitid" value="SUBMIT">
         </form>
+    </div>
     </div>
 </body>
 

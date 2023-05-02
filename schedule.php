@@ -8,8 +8,6 @@ if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,28 +31,27 @@ if(!isset($_SESSION['name'])){
         </div>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="user.php">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="request.php">SERVICES</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
 
-   
-
-    <div class="certificatesched">
-        <h1 class="CertificateSchedule">
-            Certificate Schedule
-        </h1>
-        <hr class="lining2">
-    </div>
-
-
-    <a href="index.php" class="back-link">
+    <a href="request.php" class="back-link">
         <span class="back-icon">&lt;</span>
     </a>
+
+    <div class="clearanceformBG">
+    <div class="certificatesched">
+        <h1 class="namerequest">
+            Certificate Schedule
+        </h1>
+        <hr class="lining">
+    </div>
+    </div>
 </body>
 
 </html>
