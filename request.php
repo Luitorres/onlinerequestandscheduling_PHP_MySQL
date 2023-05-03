@@ -43,12 +43,7 @@ if(!isset($_SESSION['name'])){
         </nav>
     </header>
 
-
-
-
-    <a href="user.php" class="back-link">
-        <span class="back-icon">&lt;</span>
-    </a>
+    <a href="user.php" class="back-link"><h4>< BACK</h4></a>
 
     <div class="request">
         <div class="documentbackground"></div>
@@ -62,9 +57,6 @@ if(!isset($_SESSION['name'])){
         <img src="images/schedule.png" alt="sched">
     </div>
     <a href="schedule.php" class="schedulebutton">SCHEDULE</a>
-
-
-
 
 </body>
 

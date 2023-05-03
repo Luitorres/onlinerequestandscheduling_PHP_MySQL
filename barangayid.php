@@ -77,9 +77,7 @@ if(isset($_POST['Submit'])){
         </nav>
     </header>
 
-    <a href="certificaterequest.php" class="back-link">
-        <span class="back-icon">&lt;</span>
-    </a>
+    <a href="certificaterequest.php" class="back-link"><h4>< BACK</h4></a>
 
     <div class="clearanceformidBG">
     <div class="clearanceformid">

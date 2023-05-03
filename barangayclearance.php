@@ -43,7 +43,6 @@ if(isset($_POST['Submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Clearance</title>
     <link rel="stylesheet" href="main.css">
-
 </head>
 
 <body>
@@ -65,9 +64,7 @@ if(isset($_POST['Submit'])){
         </nav>
     </header>
 
-    <a href="certificaterequest.php" class="back-link">
-        <span class="back-icon">&lt;</span>
-    </a>
+    <a href="certificaterequest.php" class="back-link"><h4>< BACK</h4></a>
 
     <div class="clearanceformBG">
     <div class="clearanceform">
@@ -77,97 +74,117 @@ if(isset($_POST['Submit'])){
         <hr class="lining">
 
         <form action="#" method="post">
-            <h2 class="info">
-                Personal Information
-            </h2>
-            <label for="fname" id="firstname">First Name: </label><br>
-            <input type="text" name= "fname" id="fname" ><br><br>
+            <h2 class="info">Personal Information</h2>
 
-            <label for="lname" id="lastname">Last Name: </label><br>
-            <input type="text" name= "lname" id="lname" ><br><br>
+            <label for="fname" id="firstname">First Name: </label>
+            <input type="text" name= "fname" id="fname" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="mname" id="middlename">Middle Name: </label><br>
-            <input type="text" name= "mname" id="mname" ><br><br>
+            <label for="lname" id="lastname">Last Name: </label>
+            <input type="text" name= "lname" id="lname" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="sname" id="suffixname">Suffix Name: </label><br>
-            <input type="text" name= "sname" id="sname" ><br><br>
+            <label for="mname" id="middlename">Middle Name: </label>
+            <input type="text" name= "mname" id="mname" onkeyup="this.value = this.value.toUpperCase();">
 
-            <label for="nbirthday" id="bday">Birthday: </label><br>
-            <input type="text" name="bday" id="nbirthday" ><br><br>
+            <label for="sname" id="suffixname">Suffix Name: </label>
+            <input type="text" name= "sname" id="sname" onkeyup="this.value = this.value.toUpperCase();">
 
-            <label for="placeofbirth" id="birth">Place of Birth: </label><br>
-            <input type="text" name= "placeofbirth" id="placeofbirth" ><br><br>
+            <label for="nbirthday" id="bday">Birthday: </label>
+            <input type="date" name="bday" id="nbirthday" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="civilstatus" id="civil">Civil Status: </label><br>
-            <input type="text" name="civilstatus" id="civilstatus" ><br><br>
+            <label for="placeofbirth" id="birth">Place of Birth: </label>
+            <input type="text" name= "placeofbirth" id="placeofbirth" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="sex" id="gender">Sex: </label><br>
-            <input type="text" name="sex" id="sex" ><br><br>
+            <label for="civilstatus" id="civil">Civil Status: </label>
+            <select type="text" name="civilstatus" id="civilstatus" required>
+                <option value="" selected disabled>SELECT STATUS</option>
+                <option value="SINGLE">SINGLE</option>
+                <option value="MARRIED">MARRIED</option>
+                <option value="WIDOWED">WIDOWED</option>
+                <option value="SEPARATED">SEPARATED</option>
+                <option value="ANNULLED">ANNULLED</option>
+                <option value="COMMON-LAW PARTNER">COMMON-LAW PARTNER</option>
+                <option value="CIVIL UNION">CIVIL UNION</option>
+            </select>
 
-            <label for="Nationality" id="national">Nationality: </label><br>
-            <input type="text" name="Nationality" id="Nationality" ><br><br>
+            <label for="sex" id="gender">Sex: </label>
+            <select name="sex" id="sex" required>
+                <option value="" selected disabled>SELECT GENDER</option>
+                <option value="FEMALE">FEMALE</option>
+                <option value="MALE">MALE</option>
+                <option value="OTHERS">OTHER</option>
+            </select>
 
-            <label for="PWD" id="pd">PWD: </label><br>
-            <input type="text" name="PWD" id="PWD" placeholder="YES/NO" ><br><br>
+            <label for="Nationality" id="national">Nationality: <br>
+            <small>(For dual citizenship, please choose Filipino)</small></label>
+            <select type="text" name="Nationality" id="Nationality" required>
+                <option value="" selected disabled>SELECT NATIONALITY</option>
+                <option value="FILIPINO">FILIPINO</option>
+                <option value="OTHER">OTHER</option>
+            </select>
 
-            <label for="Occupation" id="occup">Occupation: </label><br>
-            <input type="text" id="Occupation" name= "Occupation" ><br><br>
+            <label for="PWD" id="pd">PWD: </label>
+            <select type="text" name="PWD" id="PWD" required>
+                <option value="" selected disabled>YES/NO?</option>
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </select>
+
+            <label for="Occupation" id="occup">Occupation: </label>
+            <input type="text" id="Occupation" name= "Occupation" onkeyup="this.value = this.value.toUpperCase();">
 
             <label for="phone" id="cp">Contact No:</label>
-            <input type="tel" id="phone" name="phone" pattern="^(09|\+639)\d{9}$" >
+            <input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" pattern="^(09|\+639)\d{9}$" required>
 
-            <label for="email" id="eadd">Email Address (Optional):</label>
-            <input type="email" id="email" name="email">
+            <label for="email" id="eadd">Email Address: (Optional)</label>
+            <input type="email" id="email" name="email" onkeyup="this.value = this.value.toUpperCase();">
 
             <label for="address" id="add"> Address:</label>
-            <input type="text" id="address" name="address" >
+            <input type="tel" id="address" name="address" placeholder="house#, block, lot, unit, etc:" onkeyup="this.value = this.value.toUpperCase();" required>
 
             <label for="street" id="Strt">Street:</label>
-            <select id="street" name="street">
-                <option value="Adont st.">Adont st.</option>
-                <option value="Agapito st.">Agapito st.</option>
-                <option value="Apolonia st.">Apolonia st.</option>
-                <option value="Benito hao st.">Benito hao st.</option>
-                <option value="Cf. Natividad st.">Cf. Natividad st.</option>
-                <option value="Candido compound">Candido compound</option>
-                <option value="Cunanan st.">Cunanan st.</option>
-                <option value="D. Bautista st.">D. Bautista st.</option>
-                <option value="De Castro subs">De Castro subs</option>
-                <option value="De Leon st.">De Leon st.</option>
-                <option value="Delfin st.">Delfin st.</option>
-                <option value="Diego St.">Diego St..</option>
-                <option value="Cf. Natividad st.">Cf. Natividad st.</option>
-                <option value="Don Raymundo st.">Don Raymundo st.</option>
-                <option value="F. Bautista st.">F. Bautista st.</option>
-                <option value="Florentino St.">Florentino St.</option>
-                <option value="G. Angeles St.">G. Angeles St.</option>
-                <option value="Golden Rd.">Golden Rd.</option>
-                <option value="Home Centrum Subd.">Home Centrum Subd.</option>
-                <option value="Centrum 1,2,3">Centrum 1,2,3</option>
-                <option value="Kabatuhan st.">Kabatuhan st.</option>
-                <option value="Manero compound">Manero compound</option>
-                <option value="Metro villa Sunday">Metro villa Sunday</option>
-                <option value="Modesto st.">Modesto st.</option>
-                <option value="Orosco st.">Orosco st.</option>
-                <option value="Pabaya st">Pabaya st</option>
-                <option value="Padilla compound">Padilla compound</option>
-                <option value="Paso de Carlos st.">Paso de Carlos st.</option>
-                <option value="Pedro st ">Pedro st </option>
-                <option value="S. Feliciano st.">DS. Feliciano st.</option>
-                <option value="S. Liwanag  st ">S. Liwanag st </option>
-                <option value="San Agustin village">San Agustin village</option>
-                <option value="St. John villas">St. John villas.</option>
-                <option value="Sto Rosario St ">Sto Rosario St </option>
-                <option value="Servando St.">Servando St.</option>
+            <select id="street" name="street" required>
+                <option value="" selected disabled>SELECT STREET</option>
+                <option value="ADONT STREET">ADONT STREET</option>
+                <option value="AGAPITO STREET">AGAPITO STREET</option>
+                <option value="APOLONIA STREET">APOLONIA STREET</option>
+                <option value="BENITO HAO STREET">BENITO HAO STREET</option>
+                <option value="CF. NATIVIDAD STREET">CF. NATIVIDAD STREET</option>
+                <option value="CANDIDO COMPOUND">CANDIDO COMPOUND</option>
+                <option value="CUNANAN STREET">CUNANAN STREET</option>
+                <option value="D. BAUTISTA STREET">D. BAUTISTA STREET</option>
+                <option value="DE CASTRO SUBS">DE CASTRO SUBS</option>
+                <option value="DE LEON STREET">DE LEON STREET</option>
+                <option value="DELFIN STREET">DELFIN STREET</option>
+                <option value="DIEGO STREET">DIEGO STREET</option>
+                <option value="CF. NATIVIDAD STREET">CF. NATIVIDAD STREET</option>
+                <option value="DON RAYMUNDO STREET">DON RAYMUNDO STREET</option>
+                <option value="F. BAUTISTA STREET">F. BAUTISTA STREET</option>
+                <option value="FLORENTINO STREET">FLORENTINO STREET</option>
+                <option value="G. ANGELES STREET">G. ANGELES STREET</option>
+                <option value="GOLDEN RD.">GOLDEN RD.</option>
+                <option value="HOME CENTRUM SUBD.">HOME CENTRUM SUBD.</option>
+                <option value="CENTRUM 1,2,3">CENTRUM 1,2,3</option>
+                <option value="KABATUHAN STREET">KABATUHAN STREET</option>
+                <option value="MANERO COMPOUND">MANERO COMPOUND</option>
+                <option value="METRO VILLA SUNDAY">METRO VILLA SUNDAY</option>
+                <option value="MODESTO STREET">MODESTO STREET</option>
+                <option value="OROSCO STREET">OROSCO STREET</option>
+                <option value="PABAYA STREET">PABAYA STREET</option>
+                <option value="PADILLA COMPOUND">PADILLA COMPOUND</option>
+                <option value="PASO DE CARLOS STREET">PASO DE CARLOS STREET</option>
+                <option value="PEDRO STREET">PEDRO STREET</option>
+                <option value="S. FELICIANO STREET">S. FELICIANO STREET</option>
+                <option value="S. LIWANAG STREET">S. LIWANAG STREET</option>
+                <option value="SAN AGUSTIN VILLAGE">SAN AGUSTIN VILLAGE</option>
+                <option value="ST. JOHN VILLAS">ST. JOHN VILLAS</option>
+                <option value="STO ROSARIO STREET">STO ROSARIO STREET</option>
+                <option value="SERVANDO STREET">SERVANDO STREET</option>
             </select>
-           
-            
 
-
-            <label for="message" id="msg">Message(Optional:)</label>
+            <label for="message" id="msg">Message: (Optional)</label>
             <textarea id="message" name="message" rows="4" cols="50"></textarea>
 
-            <input type="button" id="cancel" value="CANCEL" onclick="window.location='user.php'" />
+            <input type="button" id="cancel" value="CANCEL" onclick="window.location='certificaterequest.php'" />
             <input type="submit" name="Submit" id="Submit" value="SUBMIT">
 
         </form>

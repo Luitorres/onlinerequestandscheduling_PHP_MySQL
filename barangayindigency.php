@@ -63,24 +63,20 @@ if(isset($_POST['Submit'])){
         </nav>
     </header>
 
-    <a href="certificaterequest.php" class="back-link">
-        <span class="back-icon">&lt;</span>
-    </a>
+    <a href="certificaterequest.php" class="back-link"><h4>< BACK</h4></a>
 
     <div class="clearanceformBG">
     <div class="clearanceform">
         <h2 class="namerequest">
             Barangay Indigency
-
         </h2>
+        
         <hr class="lining">
 
-        <h2 class="info">
-            Personal Information
-        </h2>
-
-
         <form action="# " method="post">
+            <h2 class="info">
+                Personal Information
+            </h2>
             <label for="fname" id="firstname">First Name: </label><br>
             <input type="text" name= "fname" id="fname" ><br><br>
 

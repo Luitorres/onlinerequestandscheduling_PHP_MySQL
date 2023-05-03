@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2023 at 09:25 AM
+-- Generation Time: May 02, 2023 at 02:14 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,6 +20,39 @@ SET time_zone = "+00:00";
 --
 -- Database: `sbit3n_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request_barangay_clearance`
+--
+
+CREATE TABLE `request_barangay_clearance` (
+  `id` int(255) NOT NULL,
+  `first_name` varchar(55) NOT NULL,
+  `last_name` varchar(55) NOT NULL,
+  `middle_name` varchar(55) NOT NULL,
+  `suffix_name` varchar(55) NOT NULL,
+  `birthday` varchar(55) NOT NULL,
+  `place_of_birth` varchar(55) NOT NULL,
+  `civil_status` varchar(55) NOT NULL,
+  `sex` varchar(55) NOT NULL,
+  `nationality` varchar(55) NOT NULL,
+  `pwd` varchar(55) NOT NULL,
+  `occupation` varchar(55) NOT NULL,
+  `contact` varchar(55) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `address` varchar(55) NOT NULL,
+  `street` varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `request_barangay_clearance`
+--
+
+INSERT INTO `request_barangay_clearance` (`id`, `first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `message`) VALUES
+(1, 'JANE', 'DAW', 'MAIN', 'JR', 'NOVEMBER 11,2030', 'JUPITER', 'SINGLE', 'NON-BINARY', 'EUROPEAN', 'NO', 'WARSHIP', '09090909091', 'JANEDAW@GMAIL.COM', '60', 'De Leon st.', 'YESYES');
 
 -- --------------------------------------------------------
 
@@ -52,7 +85,135 @@ CREATE TABLE `request_cedula` (
 --
 
 INSERT INTO `request_cedula` (`id`, `first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `message`) VALUES
-(8, 'Hark', 'Tan', 'Rebolledo', 'no', 'Jan 02 2003', 'QC', 'SINGLE', 'MALE', 'FILIPINO', 'NO', 'STUDENT', '09606324430', 'harktan09@gmail.com', '10', 'Diego St.', 'HELLO BITHES');
+(8, 'Hark', 'Tan', 'Rebolledo', 'no', 'Jan 02 2003', 'QC', 'SINGLE', 'MALE', 'FILIPINO', 'NO', 'STUDENT', '09606324430', 'harktan09@gmail.com', '10', 'Diego St.', 'HELLO BITHES'),
+(9, 'joan', 'arc', 'of', 'no', 'Jan 02 2003', 'France', 'Single', 'Female', 'Filipino', 'NO', 'Secret', '09606324430', 'harktan@gmail.com', '90', 'F. Bautista st.', 'yesno');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request_goodmoral`
+--
+
+CREATE TABLE `request_goodmoral` (
+  `id` int(255) NOT NULL,
+  `first_name` varchar(55) NOT NULL,
+  `last_name` varchar(55) NOT NULL,
+  `middle_name` varchar(55) NOT NULL,
+  `suffix_name` varchar(55) NOT NULL,
+  `birthday` varchar(55) NOT NULL,
+  `place_of_birth` varchar(55) NOT NULL,
+  `civil_status` varchar(55) NOT NULL,
+  `sex` varchar(55) NOT NULL,
+  `nationality` varchar(55) NOT NULL,
+  `pwd` varchar(55) NOT NULL,
+  `occupation` varchar(55) NOT NULL,
+  `contact` varchar(55) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `address` varchar(55) NOT NULL,
+  `street` varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request_id`
+--
+
+CREATE TABLE `request_id` (
+  `id` int(255) NOT NULL,
+  `first_name` varchar(55) NOT NULL,
+  `last_name` varchar(55) NOT NULL,
+  `middle_name` varchar(55) NOT NULL,
+  `suffix_name` varchar(55) NOT NULL,
+  `birthday` varchar(55) NOT NULL,
+  `place_of_birth` varchar(55) NOT NULL,
+  `civil_status` varchar(55) NOT NULL,
+  `sex` varchar(55) NOT NULL,
+  `nationality` varchar(55) NOT NULL,
+  `pwd` varchar(55) NOT NULL,
+  `occupation` varchar(55) NOT NULL,
+  `contact` varchar(55) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `address` varchar(55) NOT NULL,
+  `street` varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL,
+  `tin` varchar(55) NOT NULL,
+  `blood_type` varchar(55) NOT NULL,
+  `emergency_first_name` varchar(55) NOT NULL,
+  `emergency_last_name` varchar(55) NOT NULL,
+  `emergency_middle_name` varchar(55) NOT NULL,
+  `emergency_contact` varchar(55) NOT NULL,
+  `emergency_suffix_name` varchar(55) NOT NULL,
+  `emergency_relationship` varchar(55) NOT NULL,
+  `emergency_address` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `request_id`
+--
+
+INSERT INTO `request_id` (`id`, `first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `message`, `tin`, `blood_type`, `emergency_first_name`, `emergency_last_name`, `emergency_middle_name`, `emergency_contact`, `emergency_suffix_name`, `emergency_relationship`, `emergency_address`) VALUES
+(0, 'PETER', 'GREAT', 'THE', 'THE THIRD', 'JANUARY 2003', 'ENGLAND', 'MARRIED', 'MALE', 'BRITISH', 'NO', 'KING OF RUSSIA', '09362199834', 'PETERTHEGREAT@GMAIL.COM', '12', 'Home Centrum Subd.', 'WEW', '1119', 'RARE', 'MARGARETTE', 'FIRST', 'THE', '09606324430', 'SR', 'MOTHER', 'BRITISH ENGLAND');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request_indigency`
+--
+
+CREATE TABLE `request_indigency` (
+  `id` int(255) NOT NULL,
+  `first_name` varchar(55) NOT NULL,
+  `last_name` varchar(55) NOT NULL,
+  `middle_name` varchar(55) NOT NULL,
+  `suffix_name` varchar(55) NOT NULL,
+  `birthday` varchar(55) NOT NULL,
+  `place_of_birth` varchar(55) NOT NULL,
+  `civil_status` varchar(55) NOT NULL,
+  `sex` varchar(55) NOT NULL,
+  `nationality` varchar(55) NOT NULL,
+  `pwd` varchar(55) NOT NULL,
+  `occupation` varchar(55) NOT NULL,
+  `contact` varchar(55) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `address` varchar(55) NOT NULL,
+  `street` varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `request_indigency`
+--
+
+INSERT INTO `request_indigency` (`id`, `first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `message`) VALUES
+(1, 'sdsds', 'sdsds', 'sdsds', 'sdsd', 'sdsd', 'sdsd', 'sdsd', 'sdsd', 'sdsd', 'sddsdsd', 'dsd', '09183466209', 'sdsdsdsdsd@gmail.com', 'sdsd', 'Golden Rd.', 'sdsdsd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request_residency`
+--
+
+CREATE TABLE `request_residency` (
+  `id` int(255) NOT NULL,
+  `first_name` varchar(55) NOT NULL,
+  `last_name` varchar(55) NOT NULL,
+  `middle_name` varchar(55) NOT NULL,
+  `suffix_name` varchar(55) NOT NULL,
+  `birthday` varchar(55) NOT NULL,
+  `place_of_birth` varchar(55) NOT NULL,
+  `civil_status` varchar(55) NOT NULL,
+  `sex` varchar(55) NOT NULL,
+  `nationality` varchar(55) NOT NULL,
+  `pwd` varchar(55) NOT NULL,
+  `occupation` varchar(55) NOT NULL,
+  `contact` varchar(55) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `address` varchar(55) NOT NULL,
+  `street` varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -89,9 +250,27 @@ INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 --
 
 --
+-- Indexes for table `request_barangay_clearance`
+--
+ALTER TABLE `request_barangay_clearance`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `request_cedula`
 --
 ALTER TABLE `request_cedula`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `request_goodmoral`
+--
+ALTER TABLE `request_goodmoral`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `request_indigency`
+--
+ALTER TABLE `request_indigency`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -105,10 +284,28 @@ ALTER TABLE `user_form`
 --
 
 --
+-- AUTO_INCREMENT for table `request_barangay_clearance`
+--
+ALTER TABLE `request_barangay_clearance`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `request_cedula`
 --
 ALTER TABLE `request_cedula`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `request_goodmoral`
+--
+ALTER TABLE `request_goodmoral`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `request_indigency`
+--
+ALTER TABLE `request_indigency`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_form`

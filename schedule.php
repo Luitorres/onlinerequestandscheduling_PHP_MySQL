@@ -40,9 +40,7 @@ if(!isset($_SESSION['name'])){
         </nav>
     </header>
 
-    <a href="request.php" class="back-link">
-        <span class="back-icon">&lt;</span>
-    </a>
+    <a href="user.php" class="back-link"><h4>< BACK</h4></a>
 
     <div class="clearanceformBG">
     <div class="certificatesched">
