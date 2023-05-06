@@ -1,13 +1,23 @@
 <?php
-
 @include 'config.php';
-
 session_start();
-
 if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
+// $database = "sbit3n_db";
+
+// $con = new mysqli($database);
+
+// if($con->connect_error){
+//     echo $con->connect_error;
+// }
+
+// $sql = "SELECT * FROM request_cedula";
+// $request = $con->query($sql) or die ($con->error);
+// $row = $request->fetch_assoc();
+
+// print_r($row);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,10 +54,12 @@ if(!isset($_SESSION['name'])){
 
     <div class="clearanceformBG">
     <div class="certificatesched">
-        <h1 class="namerequest">
-            Certificate Schedule
-        </h1>
+        <h1 class="namerequest">Certificate Schedule</h1>
         <hr class="lining">
+    
+        <div class="">
+
+        </div>
     </div>
     </div>
 </body>

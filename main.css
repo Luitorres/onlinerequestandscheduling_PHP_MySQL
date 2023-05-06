@@ -68,9 +68,7 @@ nav a:hover {
     text-decoration: none;
     position: absolute;
     top: 21%;
-    height: 50px;
     left: 2%;
-    transition: 0.20s;
     font-weight: bold;
     font-size: 150%;
     font-family: Arial, Helvetica, sans-serif;
@@ -140,7 +138,7 @@ nav a:hover {
     align-items: center;
 }
 
-button {
+.button {
     box-sizing: border-box;
     position: absolute;
     width: 196px;
@@ -153,11 +151,10 @@ button {
     text-decoration: underline;
     font-size: 20px;
     border: 0;
-    transition: 0.30s;
     font-family: 'futura';
 }
 
-button:hover {
+.button:hover {
     transform: scale(1.1);
     color: black;
 }
@@ -208,7 +205,6 @@ button:hover {
     font-weight: 600;
     line-height: 40px;
     padding: 7px;
-    transition: 0.20s;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -263,7 +259,6 @@ button:hover {
     font-weight: 700;
     line-height: 40px;
     padding: 7px;
-    transition: 0.20s;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -287,21 +282,6 @@ button:hover {
     text-decoration: none;
 }
 
-.namerequest {
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 46px;
-    display: flex;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000000;
-    position: absolute;
-    top: 15px;
-    left: 3%;
-}
-
 .CertificateList {
     margin-top: 10%;
     margin-left: 5%;
@@ -318,35 +298,6 @@ button:hover {
 .CertificateList a:hover {
     color: rgba(43, 101, 236, 0.5);
 }
-
-.info {
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 46px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 40px;
-    left: 3%;
-}
-
-.infoid {
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 46px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    position: absolute;
-    top: 70px;
-    left: 3%;
-} 
 
 .clearanceformBG{
     height: 1300px;
@@ -369,17 +320,37 @@ button:hover {
 }
 
 .clearanceformidBG {
-    height: 1500px;
+    height: 1660px;
 }
 
 .clearanceformid {
     position: absolute;
     width: 80%;
-    height: 1300px;
+    height: 1460px;
     left: 10%;
     top: 20%;
     background: #FFFFFF;
     border-radius: 10px;
+}
+
+.clearanceformid form {
+    position: relative;
+    top: 3%;
+}
+
+.namerequest {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    position: absolute;
+    top: 15px;
+    left: 3%;
 }
 
 .lining {
@@ -390,10 +361,40 @@ button:hover {
     border: 1px solid #212121;
 }
 
+.info {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 40px;
+    left: 3%;
+}
+
+.sched-info {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 605px;
+    left: 3%;
+}
+
 #fname {
     position: absolute;
     width: 28%;
-    height: 50px;
+    height: 45px;
     left: 3%;
     top: 120px;
     background: rgba(204, 204, 204, 0.85);
@@ -404,24 +405,21 @@ button:hover {
 
 #firstname {
     position: absolute;
-    width: 98px;
-    height: 23px;
     left: 4%;
     top: 90px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    line-height: 23px;
+    line-height: 20px;
     display: flex;
     align-items: center;
-    color: #000000;
 }
 
 #lname {
     position: absolute;
     width: 25%;
-    height: 50px;
+    height: 45px;
     left: 32%;
     top: 120px;
     background: rgba(204, 204, 204, 0.85);
@@ -432,24 +430,21 @@ button:hover {
 
 #lastname {
     position: absolute;
-    width: 98px;
-    height: 23px;
     left: 33%;
     top: 90px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    line-height: 23px;
+    line-height: 20px;
     display: flex;
     align-items: center;
-    color: #000000;
 }
 
 #mname {
     position: absolute;
     width: 25%;
-    height: 50px;
+    height: 45px;
     left: 58%;
     top: 120px;
     background: rgba(204, 204, 204, 0.85);
@@ -461,24 +456,21 @@ button:hover {
 
 #middlename {
     position: absolute;
-    width: 120px;
-    height: 23px;
     left: 59%;
     top: 90px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    line-height: 23px;
+    line-height: 20px;
     display: flex;
     align-items: center;
-    color: #000000;
 }
 
 #sname {
     position: absolute;
     width: 13%;
-    height: 50px;
+    height: 45px;
     left: 84%;
     top: 120px;
     background: rgba(204, 204, 204, 0.85);
@@ -489,24 +481,19 @@ button:hover {
 
 #suffixname {
     position: absolute;
-    width: 101px;
-    height: 23px;
     left: 85%;
     top: 90px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    line-height: 23px;
+    line-height: 20px;
     display: flex;
     align-items: center;
-    color: #000000;
 }
 
 #bday {
     position: absolute;
-    width: 78px;
-    height: 20px;
     left: 4%;
     top: 190px;
     font-family: 'Arial';
@@ -521,7 +508,7 @@ button:hover {
 #nbirthday {
     position: absolute;
     width: 20%;
-    height: 50px;
+    height: 45px;
     left: 3%;
     top: 220px;
     background: rgba(204, 204, 204, 0.85);
@@ -532,24 +519,21 @@ button:hover {
 
 #birth {
     position: absolute;
-    width: 130px;
-    height: 23px;
     left: 25%;
     top: 190px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    line-height: 23px;
+    line-height: 20px;
     display: flex;
     align-items: center;
-    color: #000000;
 }
 
 #placeofbirth {
     position: absolute;
     width: 30%;
-    height: 50px;
+    height: 45px;
     left: 24%;
     top: 220px;
     background: rgba(204, 204, 204, 0.85);
@@ -560,24 +544,21 @@ button:hover {
 
 #civil {
     position: absolute;
-    width: 101px;
-    height: 23px;
     left: 56%;
     top: 190px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    line-height: 23px;
+    line-height: 20px;
     display: flex;
     align-items: center;
-    color: #000000;
 }
 
 #civilstatus {
     position: absolute;
     width: 25%;
-    height: 50px;
+    height: 45px;
     left: 55%;
     top: 220px;
     background: rgba(204, 204, 204, 0.85);
@@ -588,24 +569,21 @@ button:hover {
 
 #gender {
     position: absolute;
-    width: 101px;
-    height: 23px;
     left: 82%;
     top: 190px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    line-height: 23px;
+    line-height: 20px;
     display: flex;
     align-items: center;
-    color: #000000;
 }
 
 #sex {
     position: absolute;
     width: 16%;
-    height: 50px;
+    height: 45px;
     left: 81%;
     top: 220px;
     background: rgba(204, 204, 204, 0.85);
@@ -616,8 +594,6 @@ button:hover {
 
 #national {
     position: absolute;
-    width: auto;
-    height: 20px;
     left: 4%;
     top: 290px;
     font-family: 'Arial';
@@ -632,7 +608,7 @@ button:hover {
 #Nationality {
     position: absolute;
     width: 25%;
-    height: 50px;
+    height: 45px;
     left: 3%;
     top: 320px;
     background: rgba(204, 204, 204, 0.85);
@@ -643,8 +619,6 @@ button:hover {
 
 #pd {
     position: absolute;
-    width: 78px;
-    height: 20px;
     left: 41%;
     top: 290px;
     font-family: 'Arial';
@@ -659,7 +633,7 @@ button:hover {
 #PWD {
     position: absolute;
     width: 15%;
-    height: 50px;
+    height: 45px;
     left: 40%;
     top: 320px;
     background: rgba(204, 204, 204, 0.85);
@@ -670,8 +644,6 @@ button:hover {
 
 #occup {
     position: absolute;
-    width: 78px;
-    height: 20px;
     left: 68%;
     top: 290px;
     font-family: 'Arial';
@@ -686,7 +658,7 @@ button:hover {
 #Occupation {
     position: absolute;
     width: 30%;
-    height: 50px;
+    height: 45px;
     left: 67%;
     top: 320px;
     background: rgba(204, 204, 204, 0.85);
@@ -695,38 +667,9 @@ button:hover {
     border: 0
 }
 
-#bdtype {
-    position: absolute;
-    width: 100px;
-    height: 20px;
-    left: 680px;
-    top: 290px;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-}
-
-#bloodtype {
-    position: absolute;
-    width: 335px;
-    height: 50px;
-    left: 670px;
-    top: 320px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    padding: 15px;
-    border: 0;
-}
-
 #cp {
     position: absolute;
-    width: 100px;
-    height: 20px;
-    left: 43px;
+    left: 4%;
     top: 390px;
     font-family: 'Arial';
     font-style: normal;
@@ -737,12 +680,11 @@ button:hover {
     align-items: center;
 }
 
-
 #phone {
     position: absolute;
-    width: 400px;
-    height: 50px;
-    left: 35px;
+    width: 20%;
+    height: 45px;
+    left: 3%;
     top: 420px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
@@ -752,9 +694,7 @@ button:hover {
 
 #eadd {
     position: absolute;
-    width: 200px;
-    height: 20px;
-    left: 480px;
+    left: 25%;
     top: 390px;
     font-family: 'Arial';
     font-style: normal;
@@ -767,9 +707,9 @@ button:hover {
 
 #email {
     position: absolute;
-    width: 534px;
-    height: 50px;
-    left: 470px;
+    width: 35%;
+    height: 45px;
+    left: 24%;
     top: 420px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
@@ -779,10 +719,8 @@ button:hover {
 
 #add {
     position: absolute;
-    width: 150px;
-    height: 20px;
-    left: 43px;
-    top: 500px;
+    left: 4%;
+    top: 490px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -794,10 +732,10 @@ button:hover {
 
 #address {
     position: absolute;
-    width: 222px;
-    height: 50px;
-    left: 35px;
-    top: 530px;
+    width: 25%;
+    height: 45px;
+    left: 3%;
+    top: 520px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
     padding: 15px;
@@ -806,10 +744,8 @@ button:hover {
 
 #Strt {
     position: absolute;
-    width: 200px;
-    height: 20px;
-    left: 280px;
-    top: 505px;
+    left: 30%;
+    top: 490px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -817,58 +753,188 @@ button:hover {
     line-height: 20px;
     display: flex;
     align-items: center;
-    padding: 15px;
 }
 
 #street {
     position: absolute;
-    width: 300px;
-    height: 50px;
-    left: 270px;
-    top: 530px;
+    width: 25%;
+    height: 45px;
+    left: 29%;
+    top: 520px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
     padding: 15px;
     border: 0;
 }
 
-#txtbox1 {
+#brgy-label {
     position: absolute;
-    width: 200px;
-    height: 50px;
-    left: 585px;
-    top: 530px;
+    left: 56%;
+    top: 490px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#brgy {
+    position: absolute;
+    width: 20%;
+    height: 45px;
+    left: 55%;
+    top: 520px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
     padding: 15px;
     border: 0;
 }
 
-#txtbox2 {
+#city-label {
     position: absolute;
-    width: 200px;
-    height: 50px;
-    left: 800px;
-    top: 530px;
+    left: 77%;
+    top: 490px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#city {
+    position: absolute;
+    width: 21%;
+    height: 45px;
+    left: 76%;
+    top: 520px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
     padding: 15px;
     border: 0;
+}
+
+#sched-label {
+    position: absolute;
+    left: 4%;
+    top: 650px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#sched {
+    position: absolute;
+    width: 15%;
+    height: 45px;
+    left: 3%;
+    top: 680px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#time-label {
+    position: absolute;
+    left: 20%;
+    top: 650px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#time {
+    position: absolute;
+    width: 15%;
+    height: 45px;
+    left: 19%;
+    top: 680px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#slot-label {
+    position: absolute;
+    left: 41%;
+    top: 650px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#slot {
+    position: absolute;
+    width: 5%;
+    height: 45px;
+    left: 42%;
+    top: 680px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#slot-label1 {
+    position: absolute;
+    left: 47.5%;
+    top: 695px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#status {
+    display: none;
 }
 
 .note {
     position: absolute;
-    top: 64%;
+    bottom: 205px;
     left: 4%;
     font-family: 'Arial';
 }
 
-textarea {
+#msg {
     position: absolute;
-    width: 440px;
+    left: 58%;
+    top: 650px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#message {
+    position: absolute;
+    width: 40%;
     height: 178px;
-    left: 560px;
-    top: 630px;
+    left: 57%;
+    top: 680px;
     background: #D9D9D9;
     border-radius: 10px;
     resize: none;
@@ -876,28 +942,12 @@ textarea {
     padding: 15px;
 }
 
-#msg {
-    position: absolute;
-    width: 200px;
-    height: 20px;
-    left: 570px;
-    top: 595px;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-}
-
 #cancel {
     position: absolute;
     width: 199px;
     height: 54px;
-    left: 590px;
-    top: 900px;
-    /* background: #D35F5F; */
+    right: 22%;
+    top: 960px;
     background: rgba(204, 204, 204, 0.85);
     border: 1px solid #000000;
     border-radius: 30px;
@@ -912,10 +962,9 @@ textarea {
     position: absolute;
     width: 199px;
     height: 54px;
-    left: 800px;
-    top: 900px;
+    right: 3%;
+    top: 960px;
     background: rgba(204, 204, 204, 0.85);
-    /* background: #4BBA41; */
     border: 1px solid #000000;
     border-radius: 30px;
     font-size: 25px;
@@ -925,61 +974,7 @@ textarea {
     background-color: #4BBA41;
 }
 
-#TIN {
-    position: absolute;
-    width: 400px;
-    height: 50px;
-    left: 40px;
-    top: 630px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#tn {
-    position: absolute;
-    width: 36px;
-    height: 20px;
-    left: 43px;
-    top: 605px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#occup2 {
-    position: absolute;
-    width: 78px;
-    height: 20px;
-    left: 510px;
-    top: 610px;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-}
-
-#Occupation2 {
-    position: absolute;
-    width: 500px;
-    height: 50px;
-    left: 500px;
-    top: 630px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    padding: 15px;
-    border: 0
-}
-
-.emergencyinfo {
+.info-id {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -989,758 +984,847 @@ textarea {
     align-items: center;
     color: #000000;
     position: absolute;
-    top: 48%;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 40px;
     left: 3%;
 }
 
-
-#fnameid {
+.emerg-info-id {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    color: #000000;
     position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 40px;
-    top: 170px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 605px;
+    left: 3%;
 }
 
-#firstnameid {
-
+.sched-info-id {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    color: #000000;
     position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
-    top: 150px;
-    font-family: '?????';
+    font-family: Arial, Helvetica, sans-serif;
+    top: 965px;
+    left: 3%;
+}
+
+#fname-id {
+    position: absolute;
+    width: 28%;
+    height: 45px;
+    left: 3%;
+    top: 120px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#firstname-id {
+    position: absolute;
+    left: 4%;
+    top: 90px;
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#lastnameid {
+#lname-id {
     position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 340px;
-    top: 150px;
-    font-family: '?????';
+    width: 25%;
+    height: 45px;
+    left: 32%;
+    top: 120px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#lastname-id {
+    position: absolute;
+    left: 33%;
+    top: 90px;
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
+}
+
+#mname-id {
+    position: absolute;
+    width: 25%;
+    height: 45px;
+    left: 58%;
+    top: 120px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#middlename-id {
+    position: absolute;
+    left: 59%;
+    top: 90px;
     font-family: 'Arial';
-}
-
-#lnameid {
-    position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 330px;
-    top: 170px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#mnameid {
-    position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 620px;
-    top: 170px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#middlenameid {
-    position: absolute;
-    width: 150px;
-    height: 20px;
-    left: 630px;
-    top: 150px;
-    font-family: '?????';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#snameid {
+#sname-id {
     position: absolute;
-    width: 140px;
-    height: 50px;
-    left: 83%;
-    top: 170px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#suffixnameid {
-    position: absolute;
-    width: 100px;
-    height: 20px;
+    width: 13%;
+    height: 45px;
     left: 84%;
-    top: 150px;
-    font-family: '?????';
+    top: 120px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#suffixname-id {
+    position: absolute;
+    left: 85%;
+    top: 90px;
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#bdayid {
+#bday-id {
     position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
-    top: 230px;
-    font-family: '?????';
+    left: 4%;
+    top: 190px;
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#birthdayid {
+#nbirthday-id {
     position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 40px;
-    top: 250px;
+    width: 20%;
+    height: 45px;
+    height: 45px;
+    left: 3%;
+    top: 220px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
+    padding: 15px;
     border: 0;
 }
 
-#birthid {
+#birth-id {
     position: absolute;
-    width: 130px;
+    left: 25%;
+    top: 190px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#placeofbirth-id {
+    position: absolute;
+    width: 30%;
+    height: 45px;
+    left: 24%;
+    top: 220px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#civil-id {
+    position: absolute;
+    left: 56%;
+    top: 190px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#civilstatus-id {
+    position: absolute;
+    width: 25%;
+    height: 45px;
+    left: 55%;
+    top: 220px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#gender-id {
+    position: absolute;
     height: 23px;
-    left: 340px;
-    top: 230px;
+    left: 82%;
+    top: 190px;
     font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 23px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-
-#placeofbirthid {
-    position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 330px;
-    top: 250px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#civilid {
-    position: absolute;
-    width: 150px;
-    height: 20px;
-    left: 630px;
-    top: 230px;
-    font-family: '?????';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#civilstatusid {
+#sex-id {
     position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 620px;
-    top: 250px;
+    width: 16%;
+    height: 45px;
+    left: 81%;
+    top: 220px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#national-id {
+    position: absolute;
+    left: 4%;
+    top: 290px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#Nationality-id {
+    position: absolute;
+    width: 25%;
+    height: 45px;
+    left: 3%;
+    top: 320px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
+    padding: 15px;
     border: 0;
 }
 
-#genderid {
+#pd-id {
     position: absolute;
-    width: 100px;
-    height: 20px;
+    left: 41%;
+    top: 290px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#PWD-id {
+    position: absolute;
+    width: 10%;
+    height: 45px;
+    left: 40%;
+    top: 320px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#bdtype-id {
+    position: absolute;
+    left: 53%;
+    top: 290px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#bloodtype-id {
+    position: absolute;
+    width: 10%;
+    height: 45px;
+    left: 52%;
+    top: 320px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#occup-id {
+    position: absolute;
+    left: 73%;
+    top: 290px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#Occupation-id {
+    position: absolute;
+    width: 25%;
+    height: 45px;
+    left: 72%;
+    top: 320px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0
+}
+
+#cp-id {
+    position: absolute;
+    left: 4%;
+    top: 390px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#phone-id {
+    position: absolute;
+    width: 20%;
+    height: 45px;
+    left: 3%;
+    top: 420px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#tin-id {
+    position: absolute;
+    left: 32%;
+    top: 390px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#TIN-id {
+    position: absolute;
+    width: 20%;
+    height: 45px;
+    left: 31%;
+    top: 420px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0
+}
+
+#eadd-id {
+    position: absolute;
+    left: 60%;
+    top: 390px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#email-id {
+    position: absolute;
+    width: 38%;
+    height: 45px;
+    left: 59%;
+    top: 420px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#add-id {
+    position: absolute;
+    left: 4%;
+    top: 490px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#address-id {
+    position: absolute;
+    width: 25%;
+    height: 45px;
+    left: 3%;
+    top: 520px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#Strt-id {
+    position: absolute;
+    left: 30%;
+    top: 490px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#street-id {
+    position: absolute;
+    width: 25%;
+    height: 45px;
+    left: 29%;
+    top: 520px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#brgy-label-id {
+    position: absolute;
+    left: 56%;
+    top: 490px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#brgy-id {
+    position: absolute;
+    width: 20%;
+    height: 45px;
+    left: 55%;
+    top: 520px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#city-label-id {
+    position: absolute;
+    left: 77%;
+    top: 490px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#city-id {
+    position: absolute;
+    width: 21%;
+    height: 45px;
+    left: 76%;
+    top: 520px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#firstname-id-em {
+    position: absolute;
+    left: 4%;
+    top: 650px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#fname-id-em {
+    position: absolute;
+    width: 28%;
+    height: 45px;
+    left: 3%;
+    top: 680px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#lastname-id-em {
+    position: absolute;
+    left: 33%;
+    top: 650px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#lname-id-em {
+    position: absolute;
+    width: 25%;
+    height: 45px;
+    left: 32%;
+    top: 680px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#middlename-id-em {
+    position: absolute;
+    left: 59%;
+    top: 650px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#mname-id-em {
+    position: absolute;
+    width: 25%;
+    height: 45px;
+    left: 58%;
+    top: 680px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#suffixname-id-em {
+    position: absolute;
+    left: 85%;
+    top: 650px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#sname-id-em {
+    position: absolute;
+    width: 13%;
+    height: 45px;
     left: 84%;
-    top: 230px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#sexid {
-    position: absolute;
-    width: 140px;
-    height: 50px;
-    left: 83%;
-    top: 250px;
+    top: 680px;
     background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
     border: 0;
-}
-
-#nationalid {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
-    top: 310px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#Nationalityid {
-    position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 40px;
-    top: 330px;
-    background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
-    border: 0;
+    padding: 15px;
 }
 
-#pdid {
+#cp-id-em {
     position: absolute;
-    width: 130px;
-    height: 23px;
-    left: 360px;
-    top: 310px;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 23px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-
-#PWDid {
-    position: absolute;
-    width: 300px;
-    height: 50px;
-    left: 350px;
-    top: 330px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#bdtypeid {
-    position: absolute;
-    width: 130px;
-    height: 23px;
-    left: 720px;
-    top: 310px;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 23px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-
-#bloodtypeid {
-    position: absolute;
-    width: 350px;
-    height: 50px;
-    left: 700px;
-    top: 330px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#cpid {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
-    top: 390px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#phoneid {
-    position: absolute;
-    width: 400px;
-    height: 50px;
-    left: 40px;
-    top: 410px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#eaddid {
-    position: absolute;
-    width: 200px;
-    height: 20px;
-    left: 500px;
-    top: 390px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#emailid {
-    position: absolute;
-    width: 560px;
-    height: 50px;
-    left: 490px;
-    top: 410px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#addid {
-
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
-    top: 470px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#addressid {
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    left: 40px;
-    top: 490px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#Strtid {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 290px;
-    top: 470px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#streetid {
-    position: absolute;
-    width: 300px;
-    height: 50px;
-    left: 280px;
-    top: 490px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#txtbox1id {
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    left: 620px;
-    top: 490px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-
-}
-
-#txtbox2id {
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    left: 850px;
-    top: 490px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-
-}
-
-#tnid {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
-    top: 550px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#TINid {
-    position: absolute;
-    width: 400px;
-    height: 50px;
-    left: 40px;
-    top: 570px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#occupid {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 510px;
-    top: 550px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#Occupationid {
-    position: absolute;
-    width: 550px;
-    height: 50px;
-    left: 500px;
-    top: 570px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#fnameinfo {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
-    top: 670px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#firstnameinfo {
-    position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 40px;
-    top: 690px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#lnameinfo {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 350px;
-    top: 670px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#lastnameinfo {
-    position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 340px;
-    top: 690px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#mnameinfo {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 650px;
-    top: 670px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#middlenameinfo {
-    position: absolute;
-    width: 270px;
-    height: 50px;
-    left: 640px;
-    top: 690px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#snameinfo {
-    position: absolute;
-    width: 120px;
-    height: 20px;
-    left: 930px;
-    top: 670px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-
-}
-
-#suffixnameinfo {
-    position: absolute;
-    width: 130px;
-    height: 50px;
-    left: 920px;
-    top: 690px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-#cpinfo {
-    position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
+    left: 4%;
     top: 750px;
-    font-family: '?????';
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#phoneinfo {
+#phone-id-em {
     position: absolute;
-    width: 450px;
-    height: 50px;
-    left: 40px;
-    top: 770px;
+    width: 20%;
+    height: 45px;
+    left: 3%;
+    top: 780px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
+    padding: 15px;
     border: 0;
 }
 
-#relationinfo {
+#relation-id-em {
     position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 548px;
+    left: 26%;
     top: 750px;
-    font-family: '?????';
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#relationshipinfo {
+#rship-id-em {
     position: absolute;
-    width: 510px;
-    height: 50px;
-    left: 540px;
-    top: 770px;
+    width: 20%;
+    height: 45px;
+    left: 25%;
+    top: 780px;
     background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
     border: 0;
+    border-radius: 10px;
+    padding: 15px;
 }
 
-#anameinfo {
+#add-rship-id-em {
     position: absolute;
-    width: 90px;
-    height: 20px;
-    left: 43px;
-    top: 830px;
-    font-family: '?????';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: 'Arial';
-}
-
-#addressnameinfo {
-    position: absolute;
-    width: 1010px;
-    height: 50px;
-    left: 40px;
+    left: 4%;
     top: 850px;
-    background: rgba(204, 204, 204, 0.85);
-    border-radius: 10px;
-    border: 0;
-}
-
-.noteinfo {
-    position: absolute;
-    width: 500px;
-    height: 20px;
-    left: 43px;
-    top: 78%;
-    font-family: '?????';
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#msgid {
+#address-id-em {
     position: absolute;
-    width: 500px;
-    height: 20px;
-    left: 553px;
-    top: 71%;
-    font-family: '?????';
+    width: 94%;
+    height: 45px;
+    left: 3%;
+    top: 880px;
+    background: rgba(204, 204, 204, 0.85);
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#sched-label-id {
+    position: absolute;
+    left: 4%;
+    top: 1010px;
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Arial';
 }
 
-#messageid {
+#sched-id {
     position: absolute;
-    left: 540px;
-    top: 73%;
+    width: 15%;
+    height: 45px;
+    left: 3%;
+    top: 1040px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
+    padding: 15px;
     border: 0;
 }
 
-#cancelid {
+#time-label-id {
+    position: absolute;
+    left: 20%;
+    top: 1010px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#time-id {
+    position: absolute;
+    width: 15%;
+    height: 45px;
+    left: 19%;
+    top: 1040px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#slot-label-id {
+    position: absolute;
+    left: 40%;
+    top: 1010px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#slot-id {
+    position: absolute;
+    width: 5%;
+    height: 45px;
+    left: 42%;
+    top: 1040px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    padding: 15px;
+    border: 0;
+}
+
+#slot-label1-id {
+    position: absolute;
+    left: 47.5%;
+    top: 1052px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#status-id {
+    display: none;
+}
+
+.note-id {
+    position: absolute;
+    top: 1190px;
+    left: 4%;
+    font-family: 'Arial';
+}
+
+#msg-id {
+    position: absolute;
+    left: 58%;
+    top: 1010px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#message-id {
+    position: absolute;
+    width: 40%;
+    height: 178px;
+    left: 57%;
+    top: 1040px;
+    background: rgba(204, 204, 204, 0.85);
+    border-radius: 10px;
+    resize: none;
+    border: 0;
+    padding: 15px;
+}
+
+#cancel-id {
     position: absolute;
     width: 199px;
     height: 54px;
-    left: 590px;
-    top: 93%;
-    /* background: #D35F5F; */
+    right: 22%;
+    top: 1320px;
     background: rgba(204, 204, 204, 0.85);
     border: 1px solid #000000;
     border-radius: 30px;
     font-size: 25px;
 }
 
-#cancelid:hover {
+#cancel-id:hover {
     background-color: #D35F5F;
 }
 
-#submitid {
+#Submit-id {
     position: absolute;
     width: 199px;
     height: 54px;
-    left: 800px;
-    top: 93%;
+    right: 3%;
+    top: 1320px;
     background: rgba(204, 204, 204, 0.85);
-    /* background: #4BBA41; */
     border: 1px solid #000000;
     border-radius: 30px;
     font-size: 25px;
 }
 
-#submitid:hover {
+#Submit-id:hover {
     background-color: #4BBA41;
 }
 

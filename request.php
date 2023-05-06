@@ -21,14 +21,13 @@ if(!isset($_SESSION['name'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Page</title>
     <link rel="stylesheet" href="main.css">
-
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
     <header class="sticky-header">
-
         <div class="logo">
-            <a href="index.php">
+            <a href="user.php">
                 <img src="images/logo.jpg" alt="Logo">
             </a>
         </div>
@@ -58,6 +57,36 @@ if(!isset($_SESSION['name'])){
     </div>
     <a href="schedule.php" class="schedulebutton">SCHEDULE</a>
 
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '30px',
+            duration: 2500,
+            delay: 400
+        });
+        ScrollReveal().reveal('.sticky-header', {
+            delay: 100,
+            origin: 'top'
+        });
+        ScrollReveal().reveal('.back-link', {
+            delay: 300,
+            origin: 'left'
+        });
+        ScrollReveal().reveal('.request', {
+            delay: 500,
+            origin: 'left'
+        });
+        ScrollReveal().reveal('.schedule',  {
+            delay: 500,
+            origin: 'right'
+        });
+        ScrollReveal().reveal('.schedulebutton', {
+            delay: 800,
+        });
+        ScrollReveal().reveal('.requestbutton',  {
+            delay: 800,
+        });
+    </script>
 </body>
-
+</body>
 </html>

@@ -19,6 +19,7 @@ if(!isset($_SESSION['name'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificate Request</title>
     <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
@@ -39,8 +40,6 @@ if(!isset($_SESSION['name'])){
         </nav>
     </header>
 
-
-
     <a href="request.php" class="back-link"><h4>< BACK</h4></a>
 
     <div class="CertificateListBG">
@@ -53,18 +52,40 @@ if(!isset($_SESSION['name'])){
 
         <div class="CertificateList">
             <ul>
+                <a href="barangaycedula.php" >Barangay Cedula</a><br><br>
+                <a href="goodmoral.php" >Barangay Certificate of Good Moral Character</a><br><br>
                 <a href="barangayclearance.php" >Barangay Clearance</a><br><br>
                 <a href="barangayid.php" >Barangay ID</a><br><br>
-                <a href="goodmoral.php" >Barangay Certificate of Good Moral Character</a><br><br>
-                <a href="barangayresidency.php" >Barangay of Residency</a><br><br>
                 <a href="barangayindigency.php" >Barangay Indigency</a><br><br>
-                <a href="barangaycedula.php" >Barangay Cedula</a>
-                <!-- <a href="baranggayclearance.php" class="brgyhealth">Barangay Health Certificate</a> -->
-                <!-- <a href="baranggayclearance.php" class="brgypermit">Barangay Business Permit</a> -->
+                <a href="barangayresidency.php" >Barangay Residency</a>
             </ul>
         </div>           
     </div>
     </div>
+
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '30px',
+            duration: 2500,
+            delay: 400
+        });
+        ScrollReveal().reveal('.sticky-header', {
+            delay: 100,
+            origin: 'top'
+        });
+        ScrollReveal().reveal('.back-link', {
+            delay: 300,
+            origin: 'left'
+        });
+        ScrollReveal().reveal('.CertificateRequest', {
+            delay: 300,
+        });
+        ScrollReveal().reveal('.CertificateList', {
+            delay: 800,
+            origin: 'right'
+        });
+    </script>
 
 </body>
 
