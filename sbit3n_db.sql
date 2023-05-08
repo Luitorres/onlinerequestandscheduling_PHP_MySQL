@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `request_barangay_clearance` (
-  `id` int(255) NOT NULL,
   `first_name` varchar(55) NOT NULL,
   `last_name` varchar(55) NOT NULL,
   `middle_name` varchar(55) NOT NULL,
@@ -44,7 +43,13 @@ CREATE TABLE `request_barangay_clearance` (
   `email` varchar(55) NOT NULL,
   `address` varchar(55) NOT NULL,
   `street` varchar(55) NOT NULL,
-  `message` varchar(55) NOT NULL
+  'brgy' varchar(55) NOT NULL,
+  'city' varchar(55) NOT NULL,
+  'sched' varchar(55) NOT NULL,
+  'time' varchar(55) NOT NULL,
+  'slot' varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL,
+  'status' varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -61,7 +66,6 @@ INSERT INTO `request_barangay_clearance` (`id`, `first_name`, `last_name`, `midd
 --
 
 CREATE TABLE `request_cedula` (
-  `id` int(255) NOT NULL,
   `first_name` varchar(55) NOT NULL,
   `last_name` varchar(55) NOT NULL,
   `middle_name` varchar(55) NOT NULL,
@@ -77,7 +81,13 @@ CREATE TABLE `request_cedula` (
   `email` varchar(55) NOT NULL,
   `address` varchar(55) NOT NULL,
   `street` varchar(55) NOT NULL,
-  `message` varchar(55) NOT NULL
+  'brgy' varchar(55) NOT NULL,
+  'city' varchar(55) NOT NULL,
+  'sched' varchar(55) NOT NULL,
+  'time' varchar(55) NOT NULL,
+  'slot' varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL,
+  'status' varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -94,8 +104,8 @@ INSERT INTO `request_cedula` (`id`, `first_name`, `last_name`, `middle_name`, `s
 -- Table structure for table `request_goodmoral`
 --
 
+
 CREATE TABLE `request_goodmoral` (
-  `id` int(255) NOT NULL,
   `first_name` varchar(55) NOT NULL,
   `last_name` varchar(55) NOT NULL,
   `middle_name` varchar(55) NOT NULL,
@@ -111,7 +121,13 @@ CREATE TABLE `request_goodmoral` (
   `email` varchar(55) NOT NULL,
   `address` varchar(55) NOT NULL,
   `street` varchar(55) NOT NULL,
-  `message` varchar(55) NOT NULL
+  `brgy` varchar(55) NOT NULL,
+  `city` varchar(55) NOT NULL,
+  `sched` varchar(55) NOT NULL,
+  `time` varchar(55) NOT NULL,
+  `slot` varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL,
+  `status` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -121,7 +137,6 @@ CREATE TABLE `request_goodmoral` (
 --
 
 CREATE TABLE `request_id` (
-  `id` int(255) NOT NULL,
   `first_name` varchar(55) NOT NULL,
   `last_name` varchar(55) NOT NULL,
   `middle_name` varchar(55) NOT NULL,
@@ -132,21 +147,27 @@ CREATE TABLE `request_id` (
   `sex` varchar(55) NOT NULL,
   `nationality` varchar(55) NOT NULL,
   `pwd` varchar(55) NOT NULL,
+  `blood_type` varchar(55) NOT NULL,
+  `tin` varchar(55) NOT NULL,
   `occupation` varchar(55) NOT NULL,
   `contact` varchar(55) NOT NULL,
   `email` varchar(55) NOT NULL,
   `address` varchar(55) NOT NULL,
   `street` varchar(55) NOT NULL,
+  `brgy` varchar(55) NOT NULL,
+  `city` varchar(55) NOT NULL,
+  `em_first_name` varchar(55) NOT NULL,
+  `em_last_name` varchar(55) NOT NULL,
+  `em_middle_name` varchar(55) NOT NULL,
+  `em_suffix_name` varchar(55) NOT NULL,
+  `em_contact` varchar(55) NOT NULL,
+  `em_relationship` varchar(55) NOT NULL,
+  `em_address` varchar(55) NOT NULL,
+  `sched` varchar(55) NOT NULL,
+  `time` varchar(55) NOT NULL,
+  `slot` varchar(55) NOT NULL,
   `message` varchar(55) NOT NULL,
-  `tin` varchar(55) NOT NULL,
-  `blood_type` varchar(55) NOT NULL,
-  `emergency_first_name` varchar(55) NOT NULL,
-  `emergency_last_name` varchar(55) NOT NULL,
-  `emergency_middle_name` varchar(55) NOT NULL,
-  `emergency_contact` varchar(55) NOT NULL,
-  `emergency_suffix_name` varchar(55) NOT NULL,
-  `emergency_relationship` varchar(55) NOT NULL,
-  `emergency_address` varchar(55) NOT NULL
+  `status` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -163,7 +184,6 @@ INSERT INTO `request_id` (`id`, `first_name`, `last_name`, `middle_name`, `suffi
 --
 
 CREATE TABLE `request_indigency` (
-  `id` int(255) NOT NULL,
   `first_name` varchar(55) NOT NULL,
   `last_name` varchar(55) NOT NULL,
   `middle_name` varchar(55) NOT NULL,
@@ -179,7 +199,13 @@ CREATE TABLE `request_indigency` (
   `email` varchar(55) NOT NULL,
   `address` varchar(55) NOT NULL,
   `street` varchar(55) NOT NULL,
-  `message` varchar(55) NOT NULL
+  'brgy' varchar(55) NOT NULL,
+  'city' varchar(55) NOT NULL,
+  'sched' varchar(55) NOT NULL,
+  'time' varchar(55) NOT NULL,
+  'slot' varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL,
+  'status' varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -196,7 +222,6 @@ INSERT INTO `request_indigency` (`id`, `first_name`, `last_name`, `middle_name`,
 --
 
 CREATE TABLE `request_residency` (
-  `id` int(255) NOT NULL,
   `first_name` varchar(55) NOT NULL,
   `last_name` varchar(55) NOT NULL,
   `middle_name` varchar(55) NOT NULL,
@@ -212,7 +237,13 @@ CREATE TABLE `request_residency` (
   `email` varchar(55) NOT NULL,
   `address` varchar(55) NOT NULL,
   `street` varchar(55) NOT NULL,
-  `message` varchar(55) NOT NULL
+  'brgy' varchar(55) NOT NULL,
+  'city' varchar(55) NOT NULL,
+  'sched' varchar(55) NOT NULL,
+  'time' varchar(55) NOT NULL,
+  'slot' varchar(55) NOT NULL,
+  `message` varchar(55) NOT NULL,
+  'status' varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

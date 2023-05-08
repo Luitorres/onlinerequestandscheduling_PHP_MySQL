@@ -1019,7 +1019,7 @@ nav a:hover {
     left: 3%;
 }
 
-#fname-id {
+#fnameid {
     position: absolute;
     width: 28%;
     height: 45px;
@@ -1044,7 +1044,7 @@ nav a:hover {
     align-items: center;
 }
 
-#lname-id {
+#lnameid {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1069,7 +1069,7 @@ nav a:hover {
     align-items: center;
 }
 
-#mname-id {
+#mnameid {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1094,7 +1094,7 @@ nav a:hover {
     align-items: center;
 }
 
-#sname-id {
+#snameid {
     position: absolute;
     width: 13%;
     height: 45px;
@@ -1132,7 +1132,7 @@ nav a:hover {
     align-items: center;
 }
 
-#nbirthday-id {
+#nbirthdayid {
     position: absolute;
     width: 20%;
     height: 45px;
@@ -1158,7 +1158,7 @@ nav a:hover {
     align-items: center;
 }
 
-#placeofbirth-id {
+#placeofbirthid {
     position: absolute;
     width: 30%;
     height: 45px;
@@ -1183,7 +1183,7 @@ nav a:hover {
     align-items: center;
 }
 
-#civilstatus-id {
+#civilstatusid {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1209,7 +1209,7 @@ nav a:hover {
     align-items: center;
 }
 
-#sex-id {
+#sexid {
     position: absolute;
     width: 16%;
     height: 45px;
@@ -1234,7 +1234,7 @@ nav a:hover {
     align-items: center;
 }
 
-#Nationality-id {
+#Nationalityid {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1259,7 +1259,7 @@ nav a:hover {
     align-items: center;
 }
 
-#PWD-id {
+#PWDid {
     position: absolute;
     width: 10%;
     height: 45px;
@@ -1284,7 +1284,7 @@ nav a:hover {
     align-items: center;
 }
 
-#bloodtype-id {
+#bloodtypeid {
     position: absolute;
     width: 10%;
     height: 45px;
@@ -1309,7 +1309,7 @@ nav a:hover {
     align-items: center;
 }
 
-#Occupation-id {
+#Occupationid {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1334,7 +1334,7 @@ nav a:hover {
     align-items: center;
 }
 
-#phone-id {
+#phoneid {
     position: absolute;
     width: 20%;
     height: 45px;
@@ -1359,7 +1359,7 @@ nav a:hover {
     align-items: center;
 }
 
-#TIN-id {
+#TINid {
     position: absolute;
     width: 20%;
     height: 45px;
@@ -1384,7 +1384,7 @@ nav a:hover {
     align-items: center;
 }
 
-#email-id {
+#emailid {
     position: absolute;
     width: 38%;
     height: 45px;
@@ -1409,7 +1409,7 @@ nav a:hover {
     align-items: center;
 }
 
-#address-id {
+#addressid {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1434,7 +1434,7 @@ nav a:hover {
     align-items: center;
 }
 
-#street-id {
+#streetid {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1459,7 +1459,7 @@ nav a:hover {
     align-items: center;
 }
 
-#brgy-id {
+#brgyid {
     position: absolute;
     width: 20%;
     height: 45px;
@@ -1484,7 +1484,7 @@ nav a:hover {
     align-items: center;
 }
 
-#city-id {
+#cityid {
     position: absolute;
     width: 21%;
     height: 45px;
@@ -1509,7 +1509,7 @@ nav a:hover {
     align-items: center;
 }
 
-#fname-id-em {
+#fnameidem {
     position: absolute;
     width: 28%;
     height: 45px;
@@ -1534,7 +1534,7 @@ nav a:hover {
     align-items: center;
 }
 
-#lname-id-em {
+#lnameidem {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1559,7 +1559,7 @@ nav a:hover {
     align-items: center;
 }
 
-#mname-id-em {
+#mnameidem {
     position: absolute;
     width: 25%;
     height: 45px;
@@ -1584,7 +1584,7 @@ nav a:hover {
     align-items: center;
 }
 
-#sname-id-em {
+#snameidem {
     position: absolute;
     width: 13%;
     height: 45px;
@@ -1609,7 +1609,7 @@ nav a:hover {
     align-items: center;
 }
 
-#phone-id-em {
+#phoneidem {
     position: absolute;
     width: 20%;
     height: 45px;
@@ -1634,7 +1634,7 @@ nav a:hover {
     align-items: center;
 }
 
-#rship-id-em {
+#rshipidem {
     position: absolute;
     width: 20%;
     height: 45px;
@@ -1659,7 +1659,7 @@ nav a:hover {
     align-items: center;
 }
 
-#address-id-em {
+#addressidem {
     position: absolute;
     width: 94%;
     height: 45px;
@@ -1684,7 +1684,7 @@ nav a:hover {
     align-items: center;
 }
 
-#sched-id {
+#schedid {
     position: absolute;
     width: 15%;
     height: 45px;
@@ -1709,7 +1709,7 @@ nav a:hover {
     align-items: center;
 }
 
-#time-id {
+#timeid {
     position: absolute;
     width: 15%;
     height: 45px;
@@ -1734,7 +1734,7 @@ nav a:hover {
     align-items: center;
 }
 
-#slot-id {
+#slotid {
     position: absolute;
     width: 5%;
     height: 45px;
@@ -1783,7 +1783,7 @@ nav a:hover {
     align-items: center;
 }
 
-#message-id {
+#messageid {
     position: absolute;
     width: 40%;
     height: 178px;
@@ -1812,7 +1812,7 @@ nav a:hover {
     background-color: #D35F5F;
 }
 
-#Submit-id {
+#Submitid {
     position: absolute;
     width: 199px;
     height: 54px;
@@ -1824,7 +1824,7 @@ nav a:hover {
     font-size: 25px;
 }
 
-#Submit-id:hover {
+#Submitid:hover {
     background-color: #4BBA41;
 }
 

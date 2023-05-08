@@ -5,19 +5,19 @@ if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
-// $database = "sbit3n_db";
+$database = "sbit3n_db";
 
-// $con = new mysqli($database);
+$con = new mysqli($database);
 
-// if($con->connect_error){
-//     echo $con->connect_error;
-// }
+if($con->connect_error){
+    echo $con->connect_error;
+}
 
-// $sql = "SELECT * FROM request_cedula";
-// $request = $con->query($sql) or die ($con->error);
-// $row = $request->fetch_assoc();
+$sql = "SELECT * FROM request_cedula";
+$request = $con->query($sql) or die ($con->error);
+$row = $request->fetch_assoc();
 
-// print_r($row);
+print_r($row);
 ?>
 <!DOCTYPE html>
 <html lang="en">

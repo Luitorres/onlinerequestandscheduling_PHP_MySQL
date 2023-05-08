@@ -1,52 +1,54 @@
 <?php
-
 @include 'config.php';
-
 session_start();
-
 if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
 if(isset($_POST['Submit'])){
-
     $fname = $_POST['fnameid'];
     $lname = $_POST['lnameid'];
     $mname = $_POST['mnameid'];
     $sname = $_POST['snameid'];
-    $nbirthday = $_POST['birthdayid'];
+    $nbirthday = $_POST['bdayid'];
     $placeofbirth = $_POST['placeofbirthid'];
     $civil = $_POST['civilstatusid'];
     $sex = $_POST['sexid'];
     $nationality = $_POST['Nationalityid'];
     $pwd = $_POST['PWDid'];
+    $blood = $_POST['bloodtypeid'];
+    $tin = $_POST['TINid'];
     $occupation = $_POST['Occupationid'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
+    $phone = $_POST['phoneid'];
+    $email = $_POST['emailid'];
     $address = $_POST['addressid'];
     $street = $_POST['streetid'];
-    $tin = $_POST['TIN'];
-    $blood = $_POST['bloodtypeid'];
-    $efname = $_POST['firstname'];
-    $elname = $_POST['lastname'];
-    $emname = $_POST['middlename'];
-    $econtact = $_POST['phoneinfo'];
-    $esname = $_POST['suffixname'];
-    $erelationship = $_POST['relationship'];
-    $eaddress = $_POST['address'];
-    $message = $_POST['message'];
+    $brgy = $_POST['brgyid'];
+    $city = $_POST['cityid'];
+    $efname = $_POST['fnameidem'];
+    $elname = $_POST['lnameidem'];
+    $emname = $_POST['mnameidem'];
+    $esname = $_POST['snameidem'];
+    $relationship = $_POST['rshipidem'];
+    $ephone = $_POST['phoneidem'];
+    $eaddress = $_POST['addressidem'];
+    $sched = $_POST['schedid'];
+    $time = $_POST['timeid'];
+    $slot = $_POST['slotid'];
+    $message = $_POST['messageid'];
+    $status = $_POST['status'];
+        
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_id`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `blood_type`, `tin`, `occupation`, `contact`, `email`, `address`, `street`, `brgy`, `city`, `em_first_name`, `em_last_name`, `em_middle_name`, `em_suffix_name`, `em_contact`, `em_relationship`, `em_address`, `schedule`, `time`, `slot`, `message`, `status`) 
+    VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$blood','$tin','$occupation','$phone','$email','$address','$street','$brgy','$city','$efname','$elname','$emname','$esname','$ephone','$relationship','$eaddress','$sched','$time','$slot','$message','$status')");
 
-    
-    
-    $insert_request = mysqli_query($conn, "INSERT INTO `request_id`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `tin`, `blood_type`, `emergency_first_name`, `emergency_last_name`, `emergency_middle_name`, `emergency_contact`, `emergency_suffix_name`, `emergency_relationship`, `emergency_address`, `message`) 
-    VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street', '$tin', '$blood', '$efname', '$elname', '$emname', '$econtact', '$esname', '$erelationship', '$eaddress', '$message')");
-     
-
-
-     
+    if ($insert_request) {
+        echo "<script>alert('Success submitting request.');</script>";
+    } else {
+        echo "<script>alert('Error submitting request.');</script>";
+    }
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,26 +90,26 @@ if(isset($_POST['Submit'])){
         <form action="#" method="post">
             <h2 class="info-id">Personal Information</h2>
 
-            <label for="fname-id" id="firstname-id"><font color="red">*</font>First Name: </label>
-            <input type="text" name= "fname-id" id="fname-id" onkeyup="this.value = this.value.toUpperCase();" required>
+            <label for="fnameid" id="firstname-id"><font color="red">*</font>First Name: </label>
+            <input type="text" name= "fnameid" id="fnameid" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="lname-id" id="lastname-id"><font color="red">*</font>Last Name: </label>
-            <input type="text" name= "lname-id" id="lname-id" onkeyup="this.value = this.value.toUpperCase();" required>
+            <label for="lnameid" id="lastname-id"><font color="red">*</font>Last Name: </label>
+            <input type="text" name= "lnameid" id="lnameid" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="mname-id" id="middlename-id">Middle Name: </label>
-            <input type="text" name= "mname-id" id="mname-id" onkeyup="this.value = this.value.toUpperCase();">
+            <label for="mnameid" id="middlename-id">Middle Name: </label>
+            <input type="text" name= "mnameid" id="mnameid" onkeyup="this.value = this.value.toUpperCase();">
 
-            <label for="sname-id" id="suffixname-id">Suffix Name: </label>
-            <input type="text" name= "sname-id" id="sname-id" onkeyup="this.value = this.value.toUpperCase();">
+            <label for="snameid" id="suffixname-id">Suffix Name: </label>
+            <input type="text" name= "snameid" id="snameid" onkeyup="this.value = this.value.toUpperCase();">
 
-            <label for="nbirthday-id" id="bday-id"><font color="red">*</font>Birthday: </label>
-            <input type="date" name="nbirthday-id" id="nbirthday-id" required>
+            <label for="nbirthdayid" id="bday-id"><font color="red">*</font>Birthday: </label>
+            <input type="date" name="bdayid" id="nbirthdayid" required>
 
-            <label for="placeofbirth-id" id="birth-id"><font color="red">*</font>Place of Birth: </label>
-            <input type="text" name= "placeofbirth-id" id="placeofbirth-id" onkeyup="this.value = this.value.toUpperCase();" required>
+            <label for="placeofbirthid" id="birth-id"><font color="red">*</font>Place of Birth: </label>
+            <input type="text" name="placeofbirthid" id="placeofbirthid" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="civilstatus-id" id="civil-id"><font color="red">*</font>Civil Status: </label>
-            <select type="text" name="civilstatus-id" id="civilstatus-id" required>
+            <label for="civilstatusid" id="civil-id"><font color="red">*</font>Civil Status: </label>
+            <select type="text" name="civilstatusid" id="civilstatusid" required>
                 <option value="" selected disabled>SELECT STATUS</option>
                 <option value="SINGLE">SINGLE</option>
                 <option value="MARRIED">MARRIED</option>
@@ -118,49 +120,49 @@ if(isset($_POST['Submit'])){
                 <option value="CIVIL UNION">CIVIL UNION</option>
             </select>
 
-            <label for="sex-id" id="gender-id"><font color="red">*</font>Sex: </label>
-            <select name="sex-id" id="sex-id" required>
+            <label for="sexid" id="gender-id"><font color="red">*</font>Sex: </label>
+            <select name="sexid" id="sexid" required>
                 <option value="" selected disabled>SELECT GENDER</option>
                 <option value="FEMALE">FEMALE</option>
                 <option value="MALE">MALE</option>
                 <option value="OTHERS">OTHER</option>
             </select>
 
-            <label for="Nationality-id" id="national-id"><font color="red">*</font>Nationality: <br>
+            <label for="Nationalityid" id="national-id"><font color="red">*</font>Nationality: <br>
             <small>(For dual citizenship, please choose Filipino)</small></label>
-            <select type="text" name="Nationality-id" id="Nationality-id" required>
+            <select type="text" name="Nationalityid" id="Nationalityid" required>
                 <option value="" selected disabled>SELECT NATIONALITY</option>
                 <option value="FILIPINO">FILIPINO</option>
                 <option value="OTHER">OTHER</option>
             </select>
 
-            <label for="PWD-id" id="pd-id"><font color="red">*</font>PWD: </label>
-            <select type="text" name="PWD-id" id="PWD-id" required>
+            <label for="PWDid" id="pd-id"><font color="red">*</font>PWD: </label>
+            <select type="text" name="PWDid" id="PWDid" required>
                 <option value="" selected disabled>YES/NO?</option>
                 <option value="YES">YES</option>
                 <option value="NO">NO</option>
             </select>
 
-            <label for="bloodtype-id" id="bdtype-id">Blood Type: <small>(If Applicabble)</small></label><br>
-            <input type="text" id="bloodtype-id" name="bloodtype-id" required><br><br>
+            <label for="bloodtypeid" id="bdtype-id">Blood Type: <small>(If Applicabble)</small></label><br>
+            <input type="text" id="bloodtypeid" name="bloodtypeid" required><br><br>
 
-            <label for="TIN-id" id="tin-id">TIN: <small>(If Applicable)</small></label>
-            <input type="text" id="TIN-id" name="TIN-id" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXX-XXXX">
+            <label for="TINid" id="tin-id">TIN: <small>(If Applicable)</small></label>
+            <input type="text" id="TINid" name="TINid" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXX-XXXX">
 
-            <label for="Occupation-id" id="occup-id"><font color="red">*</font>Occupation: </label>
-            <input type="text" id="Occupation-id" name= "Occupation-id" onkeyup="this.value = this.value.toUpperCase();" required>
+            <label for="Occupationid" id="occup-id"><font color="red">*</font>Occupation: </label>
+            <input type="text" id="Occupationid" name= "Occupationid" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="phone-id" id="cp-id"><font color="red">*</font>Contact No:</label>
-            <input type="tel" id="phone-id" name="phone-id" placeholder="09XX XXX XXXX" pattern="^(09|\+639)\d{9}$" required>
+            <label for="phoneid" id="cp-id"><font color="red">*</font>Contact No:</label>
+            <input type="tel" id="phoneid" name="phoneid" placeholder="09XX XXX XXXX" required>
 
-            <label for="email-id" id="eadd-id">Email Address: <small>(Optional)</small></label>
-            <input type="email" id="email-id" name="email-id">
+            <label for="emailid" id="eadd-id">Email Address: <small>(Optional)</small></label>
+            <input type="email" id="emailid" name="emailid">
 
-            <label for="address-id" id="add-id">Address:</label>
-            <input type="text" id="address-id" name="address-id" placeholder="house#, block, lot, unit, etc:" onkeyup="this.value = this.value.toUpperCase();">
+            <label for="addressid" id="add-id">Address:</label>
+            <input type="text" id="addressid" name="addressid" placeholder="house#, block, lot, unit, etc:" onkeyup="this.value = this.value.toUpperCase();">
 
-            <label for="street-id" id="Strt-id"><font color="red">*</font>Street:</label>
-            <select id="street-id" name="street-id" required>
+            <label for="streetid" id="Strt-id"><font color="red">*</font>Street:</label>
+            <select id="streetid" name="streetid" required>
                 <option value="" selected disabled>SELECT STREET</option>
                 <option value="ADONT STREET">ADONT STREET</option>
                 <option value="AGAPITO STREET">AGAPITO STREET</option>
@@ -199,58 +201,58 @@ if(isset($_POST['Submit'])){
                 <option value="SERVANDO STREET">SERVANDO STREET</option>
             </select>
 
-            <label for="brgy-id" id="brgy-label-id"><font color="red">*</font>Baranggay: </label>
-            <input type="text" name="brgy-id" id="brgy-id" value="MAPULANG LUPA" readonly>
+            <label for="brgyid" id="brgy-label-id"><font color="red">*</font>Baranggay: </label>
+            <input type="text" name="brgyid" id="brgyid" value="MAPULANG LUPA" readonly>
 
-            <label for="city-id" id="city-label-id"><font color="red">*</font>City/Municipal: </label>
-            <input type="text" name="city-id" id="city-id" value="VALENZUELA CITY" readonly>
+            <label for="cityid" id="city-label-id"><font color="red">*</font>City/Municipal: </label>
+            <input type="text" name="cityid" id="cityid" value="VALENZUELA CITY" readonly>
 
             <h2 class="emerg-info-id">Emergency Contact Information</h2>
 
-            <label for="fname-id-em" id="firstname-id-em"><font color="red">*</font>First Name: </label>
-            <input type="text" name= "fname-id-em" id="fname-id-em" onkeyup="this.value = this.value.toUpperCase();" required>
+            <label for="fnameidem" id="firstname-id-em"><font color="red">*</font>First Name: </label>
+            <input type="text" name= "fnameidem" id="fnameidem" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="lname-id-em" id="lastname-id-em"><font color="red">*</font>Last Name: </label>
-            <input type="text" name= "lname-id-em" id="lname-id-em" onkeyup="this.value = this.value.toUpperCase();" required>
+            <label for="lnameidem" id="lastname-id-em"><font color="red">*</font>Last Name: </label>
+            <input type="text" name= "lnameidem" id="lnameidem" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="mname-id-em" id="middlename-id-em">Middle Name: </label>
-            <input type="text" name= "mname-id-em" id="mname-id-em" onkeyup="this.value = this.value.toUpperCase();">
+            <label for="mnameidem" id="middlename-id-em">Middle Name: </label>
+            <input type="text" name= "mnameidem" id="mnameidem" onkeyup="this.value = this.value.toUpperCase();">
 
-            <label for="sname-id-em" id="suffixname-id-em">Suffix Name: </label>
-            <input type="text" name= "sname-id-em" id="sname-id-em" onkeyup="this.value = this.value.toUpperCase();">
+            <label for="snameidem" id="suffixname-id-em">Suffix Name: </label>
+            <input type="text" name= "snameidem" id="snameidem" onkeyup="this.value = this.value.toUpperCase();">
 
-            <label for="phone-id-em" id="cp-id-em"><font color="red">*</font>Contact No:</label>
-            <input type="tel" id="phone-id-em" name="phone-id-em" placeholder="09XX XXX XXXX" pattern="^(09|\+639)\d{9}$" required>
+            <label for="phoneidem" id="cp-id-em"><font color="red">*</font>Contact No:</label>
+            <input type="tel" id="phoneidem" name="phoneidem" placeholder="09XX XXX XXXX" required>
 
-            <label for="rship-id-em" id="relation-id-em"><font color="red">*</font>Relationship:</label>
-            <input type="text" id="rship-id-em" name="rship-id-em" required>
+            <label for="rshipidem" id="relation-id-em"><font color="red">*</font>Relationship:</label>
+            <input type="text" id="rshipidem" name="rshipidem" onkeyup="this.value = this.value.toUpperCase();" required>
 
-            <label for="address-id-em" id="add-rship-id-em"><font color="red">*</font>Address:</label>
-            <input type="text" id="address-id-em" name="address-id-em" required>
+            <label for="addressidem" id="add-rship-id-em"><font color="red">*</font>Address:</label>
+            <input type="text" id="addressidem" name="addressidem" onkeyup="this.value = this.value.toUpperCase();" required>
 
             <h2 class="sched-info-id">Schedule</h2>
 
-            <label for="sched-id" id="sched-label-id"><font color="red">*</font>Schudule: </label>
-            <input type="date" name="sched-id" id="sched-id" required>
+            <label for="schedid" id="sched-label-id"><font color="red">*</font>Schudule: </label>
+            <input type="date" name="schedid" id="schedid" required>
 
-            <label for="time-id" id="time-label-id"><font color="red">*</font>Time: </label>
-            <select type="text" name="time-id" id="time-id" required>
+            <label for="timeid" id="time-label-id"><font color="red">*</font>Time: </label>
+            <select type="text" name="timeid" id="timeid" required>
                 <option value="" selected disabled>SELECT TIME</option>
                 <option value="MORNING">MORNING</option>
                 <option value="AFTERNOON">AFTERNOON</option>
             </select>
 
-            <label for="slot-id" id="slot-label-id">Available Slot's: </label>
-            <input type="text" name="slot-id" id="slot-id" readonly>
+            <label for="slotid" id="slot-label-id">Available Slot's: </label>
+            <input type="text" name="slotid" id="slotid" readonly>
             <label for="slot" id="slot-label1-id"><font color="red">/ 10</font></label>
 
             <input type="text" name="status" id="status" value="PENDING...">
 
-            <label for="message-id" id="msg-id">Message: <small>(Optional)</small></label>
-            <textarea id="message-id" name="message-id" rows="4" cols="50"></textarea>
+            <label for="messageid" id="msg-id">Message: <small>(Optional)</small></label>
+            <textarea id="messageid" name="messageid" rows="4" cols="50"></textarea>
 
             <input type="button" id="cancel-id" value="CANCEL" onclick="window.location='user.php'" />
-            <input type="submit" name="Submit-id" id="Submit-id" value="SUBMIT">
+            <input type="submit" name="Submit" id="Submitid" value="SUBMIT">
         </form>
 
         <p class="note-id">
@@ -283,7 +285,7 @@ if(isset($_POST['Submit'])){
             origin: 'right'
         });
 
-        const phoneInputs = document.querySelectorAll('#phone-id, #phone-id-em');
+        const phoneInputs = document.querySelectorAll('#phoneid, #phoneidem');
         phoneInputs.forEach(phoneInput => {
             phoneInput.addEventListener('input', event => {
             let input = event.target.value.replace(/\D/g,'');
@@ -301,7 +303,7 @@ if(isset($_POST['Submit'])){
             });
         });
 
-        const tinInput = document.getElementById('TIN-id');
+        const tinInput = document.getElementById('TINid');
         tinInput.addEventListener('input', event => {
             let input = event.target.value.replace(/\D/g,'');
             let formattedInput = '';

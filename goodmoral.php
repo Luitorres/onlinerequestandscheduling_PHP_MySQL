@@ -1,15 +1,11 @@
 <?php
-
 @include 'config.php';
-
 session_start();
-
 if(!isset($_SESSION['name'])){
    header('location:Login.php');
 };
 
 if(isset($_POST['Submit'])){
-
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $mname = $_POST['mname'];
@@ -25,15 +21,25 @@ if(isset($_POST['Submit'])){
     $email = $_POST['email'];
     $address = $_POST['address'];
     $street = $_POST['street'];
+    $brgy = $_POST['brgy'];
+    $city = $_POST['city'];
+    $sched = $_POST['sched'];
+    $time = $_POST['time'];
+    $slot = $_POST['slot'];
     $message = $_POST['message'];
-    
-    
-    $insert_request = mysqli_query($conn, "INSERT INTO `request_goodmoral`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `message`) 
-    VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$message')");
-     
-}
+    $status = $_POST['status'];
+        
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_goodmoral`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `schedule`, `time`,`slot`, `message`, `status`) 
+    VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
 
-?>
+    if ($insert_request) {
+        echo "<script>alert('Success submitting request.');</script>";
+    } else {
+        echo "<script>alert('Error submitting request.');</script>";
+    }
+}
+?>   
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -131,7 +137,7 @@ if(isset($_POST['Submit'])){
             <input type="text" id="Occupation" name= "Occupation" onkeyup="this.value = this.value.toUpperCase();" required>
 
             <label for="phone" id="cp"><font color="red">*</font>Contact No:</label>
-            <input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" pattern="^(09|\+639)\d{9}$" required>
+            <input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" required>
 
             <label for="email" id="eadd">Email Address: (Optional)</label>
             <input type="email" id="email" name="email">

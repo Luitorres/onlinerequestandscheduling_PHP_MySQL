@@ -28,9 +28,16 @@ if(isset($_POST['Submit'])){
     $slot = $_POST['slot'];
     $message = $_POST['message'];
     $status = $_POST['status'];
+
         
-    $insert_request = mysqli_query($conn, "INSERT INTO `request_cedula`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `brgy`, `city`, `sched`, `time`, `message`, `status`) 
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_cedula`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `schedule`, `time`,`slot`, `message`, `status`) 
     VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
+
+    if ($insert_request) {
+        echo "<script>alert('Success submitting request.');</script>";
+    } else {
+        echo "<script>alert('Error submitting request.');</script>";
+    }
 }
 ?>
 
@@ -71,7 +78,7 @@ if(isset($_POST['Submit'])){
         <h2 class="namerequest">Barangay Cedula</h2>
         <hr class="lining">
 
-        <form action="#" method="post">
+        <form action="#" method="post" id="myForm">
             <h2 class="info">Personal Information</h2>
 
             <label for="fname" id="firstname"><font color="red">*</font>First Name: </label>
@@ -87,7 +94,7 @@ if(isset($_POST['Submit'])){
             <input type="text" name= "sname" id="sname" onkeyup="this.value = this.value.toUpperCase();">
 
             <label for="nbirthday" id="bday"><font color="red">*</font>Birthday: </label>
-            <input type="date" name="nbirthday" id="nbirthday" required>
+            <input type="date" name="bday" id="nbirthday" required>
 
             <label for="placeofbirth" id="birth"><font color="red">*</font>Place of Birth: </label>
             <input type="text" name= "placeofbirth" id="placeofbirth" onkeyup="this.value = this.value.toUpperCase();" required>
@@ -131,7 +138,7 @@ if(isset($_POST['Submit'])){
             <input type="text" id="Occupation" name= "Occupation" onkeyup="this.value = this.value.toUpperCase();" required>
 
             <label for="phone" id="cp"><font color="red">*</font>Contact No:</label>
-            <input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" pattern="^(09|\+639)\d{9}$" required>
+            <input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" required>
 
             <label for="email" id="eadd">Email Address: (Optional)</label>
             <input type="email" id="email" name="email">
