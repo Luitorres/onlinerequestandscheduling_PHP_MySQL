@@ -29,7 +29,7 @@ if(isset($_POST['Submit'])){
     $message = $_POST['message'];
     $status = $_POST['status'];
         
-    $insert_request = mysqli_query($conn, "INSERT INTO `request_barangay_clearance`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `schedule`, `time`,`slot`, `message`, `status`) 
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_clearance`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `schedule`, `time`,`slot`, `message`, `status`) 
     VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
 
     if ($insert_request) {

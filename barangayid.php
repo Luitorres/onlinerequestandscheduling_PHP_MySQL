@@ -38,7 +38,7 @@ if(isset($_POST['Submit'])){
     $message = $_POST['messageid'];
     $status = $_POST['status'];
         
-    $insert_request = mysqli_query($conn, "INSERT INTO `request_id`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `blood_type`, `tin`, `occupation`, `contact`, `email`, `address`, `street`, `brgy`, `city`, `em_first_name`, `em_last_name`, `em_middle_name`, `em_suffix_name`, `em_contact`, `em_relationship`, `em_address`, `schedule`, `time`, `slot`, `message`, `status`) 
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_id`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `blood_type`, `tin`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `em_first_name`, `em_last_name`, `em_middle_name`, `em_suffix_name`, `em_contact`, `em_relationship`, `em_address`, `schedule`, `time`, `slot`, `message`, `status`) 
     VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$blood','$tin','$occupation','$phone','$email','$address','$street','$brgy','$city','$efname','$elname','$emname','$esname','$ephone','$relationship','$eaddress','$sched','$time','$slot','$message','$status')");
 
     if ($insert_request) {

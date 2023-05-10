@@ -53,7 +53,7 @@ if(!isset($_SESSION['name'])){
         <div class="CertificateList">
             <ul>
                 <a href="barangaycedula.php" >Barangay Cedula</a><br><br>
-                <a href="goodmoral.php" >Barangay Certificate of Good Moral Character</a><br><br>
+                <a href="barangaygoodmoral.php" >Barangay Certificate of Good Moral Character</a><br><br>
                 <a href="barangayclearance.php" >Barangay Clearance</a><br><br>
                 <a href="barangayid.php" >Barangay ID</a><br><br>
                 <a href="barangayindigency.php" >Barangay Indigency</a><br><br>
