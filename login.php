@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
          if ($row['user_type'] == 'admin') {
             header('location:admin.php');
             exit;
-         } elseif ($row['user_type'] == 'user') {
+         } elseif ($row['user_type'] == 'member') {
             header('location:user.php');
             exit;
          }

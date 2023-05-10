@@ -9,7 +9,6 @@ if(!isset($_SESSION['name'])){
 };
 
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
