@@ -1,15 +1,10 @@
 <?php
-
 @include 'config.php';
-
 session_start();
-
-if(!isset($_SESSION['name'])){
+if(!isset($_SESSION['admin']) && !isset($_SESSION['user'])){
    header('location:Login.php');
-};
-
-
-
+   exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,22 +22,22 @@ if(!isset($_SESSION['name'])){
 <body>
     <header class="sticky-header">
         <div class="logo">
-            <a href="user.php">
+            <a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">
                 <img src="images/logo.jpg" alt="Logo">
             </a>
         </div>
         <nav>
             <ul>
-                <li><a href="user.php">HOME</a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="request.php">SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'certificaterequest.php' : 'request.php'; ?>"><?php echo isset($_SESSION['admin']) ? 'REQUEST' : 'SERVICES'; ?></a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'dashboard.php' : '#'; ?>"><?php echo isset($_SESSION['admin']) ? 'DASHBOARD' : 'CONTACT'; ?></a></li>
                 <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
 
-    <a href="user.php" class="back-link"><h4>< BACK</h4></a>
+    <a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>" class="back-link"><h4>< BACK</h4></a>
 
     <div class="request">
         <div class="documentbackground"></div>

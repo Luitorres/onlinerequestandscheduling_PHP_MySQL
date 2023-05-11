@@ -1,5 +1,4 @@
 <?php
-
 @include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
@@ -13,22 +12,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
    if ($row = mysqli_fetch_assoc($result)) {
       $hash = $row['password'];
       if (password_verify($password, $hash)) {
-
-         // Login Sucessfull
-         session_start();
-         $user = $_SESSION["name"] = $row["name"];
-         if ($row['user_type'] == 'admin') {
-            header('location:admin.php');
-            exit;
-         } elseif ($row['user_type'] == 'member') {
-            header('location:user.php');
-            exit;
-         }
-      } // Login failure
-      else {
-         $error[] = 'Incorrect Email or Password!';
+          // Login Successful
+          session_start();
+          if ($row['user_type'] == 'admin') {
+              $_SESSION["admin"] = $row["name"];
+              header('location: admin.php');
+              exit;
+          } elseif ($row['user_type'] == 'member') {
+              $_SESSION["user"] = $row["name"];
+              header('location: user.php');
+              exit;
+          }
+      } else {
+          // Login Failure
+          $error[] = 'Incorrect Email or Password!';
       }
-   }
+  }
 }
 ?>
 

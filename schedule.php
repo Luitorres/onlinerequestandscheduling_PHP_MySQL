@@ -1,23 +1,24 @@
 <?php
 @include 'config.php';
 session_start();
-if(!isset($_SESSION['name'])){
+if(!isset($_SESSION['admin']) && !isset($_SESSION['user'])){
    header('location:Login.php');
-};
-
-$database = "sbit3n_db";
-
-$con = new mysqli($database);
-
-if($con->connect_error){
-    echo $con->connect_error;
+   exit;
 }
 
-$sql = "SELECT * FROM request_cedula";
-$request = $con->query($sql) or die ($con->error);
-$row = $request->fetch_assoc();
+// $database = "sbit3n_db";
 
-print_r($row);
+// $con = new mysqli($database);
+
+// if($con->connect_error){
+//     echo $con->connect_error;
+// }
+
+// $sql = "SELECT * FROM request_cedula";
+// $request = $con->query($sql) or die ($con->error);
+// $row = $request->fetch_assoc();
+
+// print_r($row);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,20 +32,18 @@ print_r($row);
 </head>
 
 <body>
-
     <header class="sticky-header">
-
         <div class="logo">
-            <a href="user.php">
+            <a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">
                 <img src="images/logo.jpg" alt="Logo">
             </a>
         </div>
         <nav>
             <ul>
-                <li><a href="user.php">HOME</a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="request.php">SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'certificaterequest.php' : 'request.php'; ?>"><?php echo isset($_SESSION['admin']) ? 'REQUEST' : 'SERVICES'; ?></a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'dashboard.php' : '#'; ?>"><?php echo isset($_SESSION['admin']) ? 'DASHBOARD' : 'CONTACT'; ?></a></li>
                 <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
