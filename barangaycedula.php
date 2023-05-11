@@ -28,13 +28,13 @@ if(isset($_POST['Submit'])){
     $slot = $_POST['slot'];
     $message = $_POST['message'];
     $status = $_POST['status'];
-
         
     $insert_request = mysqli_query($conn, "INSERT INTO `request_cedula`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `schedule`, `time`,`slot`, `message`, `status`) 
     VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
 
     if ($insert_request) {
         echo "<script>alert('Success submitting request.');</script>";
+        echo "<script>window.location.href = 'certificaterequest.php';</script>";
     } else {
         echo "<script>alert('Error submitting request.');</script>";
     }

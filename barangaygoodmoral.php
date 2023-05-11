@@ -33,12 +33,14 @@ if(isset($_POST['Submit'])){
     VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
 
     if ($insert_request) {
-        echo "<script>alert('Success Submitting Request.');</script>";
+        echo "<script>alert('Success submitting request.');</script>";
+        echo "<script>window.location.href = 'certificaterequest.php';</script>";
     } else {
-        echo "<script>alert('Error Submitting Request.');</script>";
+        echo "<script>alert('Error submitting request.');</script>";
     }
 }
-?>   
+?>
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +49,7 @@ if(isset($_POST['Submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Good Moral</title>
+    <title>Barangay GoodMoral</title>
     <link rel="stylesheet" href="main.css">
 
 </head>

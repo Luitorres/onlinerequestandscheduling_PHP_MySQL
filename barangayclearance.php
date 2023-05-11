@@ -34,6 +34,7 @@ if(isset($_POST['Submit'])){
 
     if ($insert_request) {
         echo "<script>alert('Success submitting request.');</script>";
+        echo "<script>window.location.href = 'certificaterequest.php';</script>";
     } else {
         echo "<script>alert('Error submitting request.');</script>";
     }
