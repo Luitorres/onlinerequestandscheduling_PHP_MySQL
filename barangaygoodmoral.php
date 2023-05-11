@@ -10,7 +10,7 @@ if(isset($_POST['Submit'])){
     $lname = $_POST['lname'];
     $mname = $_POST['mname'];
     $sname = $_POST['sname'];
-    $nbirthday = $_POST['bday'];
+    $nbirthday = $_POST['nbirthday'];
     $placeofbirth = $_POST['placeofbirth'];
     $civil = $_POST['civilstatus'];
     $sex = $_POST['sex'];
@@ -33,9 +33,9 @@ if(isset($_POST['Submit'])){
     VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
 
     if ($insert_request) {
-        echo "<script>alert('Success submitting request.');</script>";
+        echo "<script>alert('Success Submitting Request.');</script>";
     } else {
-        echo "<script>alert('Error submitting request.');</script>";
+        echo "<script>alert('Error Submitting Request.');</script>";
     }
 }
 ?>   

@@ -18,59 +18,6 @@
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
-   text-transform: capitalize;
-}
-.container{
-   min-height: 100vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   padding:20px;
-   padding-bottom: 60px;
-}
-
-.container .content{
-   text-align: center;
-}
-
-.container .content h3{
-   font-size: 30px;
-   color:#333;
-}
-
-.container .content h3 span{
-   background: crimson;
-   color:#fff;
-   border-radius: 5px;
-   padding:0 15px;
-}
-
-.container .content h1{
-   font-size: 50px;
-   color:#333;
-}
-
-.container .content h1 span{
-   color:crimson;
-}
-
-.container .content p{
-   font-size: 25px;
-   margin-bottom: 20px;
-}
-
-.container .content .btn{
-   display: inline-block;
-   padding:10px 30px;
-   font-size: 20px;
-   background: #333;
-   color:#fff;
-   margin:0 5px;
-   text-transform: capitalize;
-}
-
-.container .content .btn:hover{
-   background: crimson;
 }
 
 .form-container{
@@ -94,7 +41,6 @@
 
 .form-container form h3{
    font-size: 30px;
-   text-transform: uppercase;
    margin-bottom: 10px;
    color:#333;
 }
@@ -116,7 +62,6 @@
 .form-container form .form-btn{
    background: #fbd0d9;
    color:crimson;
-   text-transform: capitalize;
    font-size: 20px;
    cursor: pointer;
 }

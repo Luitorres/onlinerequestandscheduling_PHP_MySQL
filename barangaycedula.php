@@ -10,7 +10,7 @@ if(isset($_POST['Submit'])){
     $lname = $_POST['lname'];
     $mname = $_POST['mname'];
     $sname = $_POST['sname'];
-    $nbirthday = $_POST['bday'];
+    $nbirthday = $_POST['nbirthday'];
     $placeofbirth = $_POST['placeofbirth'];
     $civil = $_POST['civilstatus'];
     $sex = $_POST['sex'];
@@ -94,7 +94,7 @@ if(isset($_POST['Submit'])){
             <input type="text" name= "sname" id="sname" onkeyup="this.value = this.value.toUpperCase();">
 
             <label for="nbirthday" id="bday"><font color="red">*</font>Birthday: </label>
-            <input type="date" name="bday" id="nbirthday" required>
+            <input type="date" name="nbirthday" id="nbirthday" required>
 
             <label for="placeofbirth" id="birth"><font color="red">*</font>Place of Birth: </label>
             <input type="text" name= "placeofbirth" id="placeofbirth" onkeyup="this.value = this.value.toUpperCase();" required>

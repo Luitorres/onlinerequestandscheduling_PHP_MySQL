@@ -13,7 +13,7 @@ if(isset($_POST['Submit'])){
     $lname = $_POST['lname'];
     $mname = $_POST['mname'];
     $sname = $_POST['sname'];
-    $nbirthday = $_POST['bday'];
+    $nbirthday = $_POST['nbirthday'];
     $placeofbirth = $_POST['placeofbirth'];
     $civil = $_POST['civilstatus'];
     $sex = $_POST['sex'];

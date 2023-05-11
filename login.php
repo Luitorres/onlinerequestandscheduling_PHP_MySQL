@@ -20,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
          if ($row['user_type'] == 'admin') {
             header('location:admin.php');
             exit;
-         } elseif ($row['user_type'] == 'user') {
+         } elseif ($row['user_type'] == 'member') {
             header('location:user.php');
             exit;
          }
       } // Login failure
       else {
-         $error[] = 'incorrect email or password!';
+         $error[] = 'Incorrect Email or Password!';
       }
    }
 }
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
    <div class="form-container">
 
       <form action="" method="post">
-         <h3>login now</h3>
+         <h3>LOGIN NOW</h3>
          <?php
          if (isset($error)) {
             foreach ($error as $error) {
@@ -59,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
             };
          };
          ?>
-         <input type="email" name="email" required placeholder="enter your email">
-         <input type="password" name="password" required placeholder="enter your password">
-         <input type="submit" name="submit" value="login now" class="form-btn">
-         <p>don't have an account? <a href="register.php">register now</a></p>
+         <input type="email" name="email" required placeholder="Enter your email">
+         <input type="password" name="password" required placeholder="Enter your password">
+         <input type="submit" name="submit" value="Login Now" class="form-btn">
+         <p>Don't Have An Account? <a href="register.php">Register Now</a></p>
       </form>
 
    </div>
