@@ -14,7 +14,7 @@ if(!isset($_SESSION['admin']) && !isset($_SESSION['member'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapulang Lupa | Certificate List</title>
+    <title>Mapulang Lupa | Request&Schedule</title>
     <link rel="stylesheet" href="main.css">
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
@@ -22,9 +22,7 @@ if(!isset($_SESSION['admin']) && !isset($_SESSION['member'])){
 <body>
     <header class="sticky-header">
         <div class="logo">
-            <a href="mapulanglupa.php">
-                <img src="images/logo.jpg" alt="Logo">
-            </a>
+            <a href="mapulanglupa.php"><img src="images/logo.jpg" alt="Logo"></a>
         </div>
         <nav>
             <ul>
@@ -37,25 +35,20 @@ if(!isset($_SESSION['admin']) && !isset($_SESSION['member'])){
         </nav>
     </header>
 
-    <a href="<?php echo isset($_SESSION['admin']) ? 'mapulanglupa.php' : 'services.php'; ?>" class="back-link"><h4>< BACK</h4></a>
+    <a href="mapulanglupa.php" class="back-link"><h4>< BACK</h4></a>
 
-    <div class="CertificateListBG">
-    <div class="CertificateRequest">
-        <h2 class="namerequest">Certificate Request</h2>
-        <hr class="lining">
+    <div class="request">
+        <div class="documentbackground"></div>
+        <img src="images/document.png" alt="docu">
+    </div>
 
-        <div class="CertificateList">
-            <ul>
-                <a href="barangaycedula.php" >Barangay Cedula</a><br><br>
-                <a href="barangaygoodmoral.php" >Barangay Certificate of Good Moral Character</a><br><br>
-                <a href="barangayclearance.php" >Barangay Clearance</a><br><br>
-                <a href="barangayid.php" >Barangay ID</a><br><br>
-                <a href="barangayindigency.php" >Barangay Indigency</a><br><br>
-                <a href="barangayresidency.php" >Barangay Residency</a>
-            </ul>
-        </div>           
+    <a href="request.php" class="requestbutton">REQUEST</a>
+
+    <div class="schedule">
+        <div class="schedulebackground"></div>
+        <img src="images/schedule.png" alt="sched">
     </div>
-    </div>
+    <a href="schedule.php" class="schedulebutton">SCHEDULE</a>
 
     <script>
         ScrollReveal({
@@ -68,15 +61,21 @@ if(!isset($_SESSION['admin']) && !isset($_SESSION['member'])){
             delay: 300,
             origin: 'left'
         });
-        ScrollReveal().reveal('.CertificateRequest', {
-            delay: 300,
+        ScrollReveal().reveal('.request', {
+            delay: 500,
+            origin: 'left'
         });
-        ScrollReveal().reveal('.CertificateList', {
-            delay: 800,
+        ScrollReveal().reveal('.schedule',  {
+            delay: 500,
             origin: 'right'
         });
+        ScrollReveal().reveal('.schedulebutton', {
+            delay: 800,
+        });
+        ScrollReveal().reveal('.requestbutton',  {
+            delay: 800,
+        });
     </script>
-
 </body>
-
+</body>
 </html>

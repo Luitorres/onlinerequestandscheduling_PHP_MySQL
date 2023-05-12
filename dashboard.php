@@ -21,15 +21,15 @@ if(!isset($_SESSION['admin'])){
 <body>
     <header class="sticky-header">
         <div class="logo">
-            <a href="admin.php">
+            <a href="mapulanglupa.php">
                 <img src="images/logo.jpg" alt="Logo">
             </a>
         </div>
         <nav>
             <ul>
-                <li><a href="admin.php">HOME</a></li>
+                <li><a href="mapulanglupa.php">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="certificaterequest.php">REQUEST</a></li>
+                <li><a href="request.php">REQUEST</a></li>
                 <li><a href="dashboard.php">DASHBOARD</a></li>
                 <li><a href="index.php">LOGOUT</a></li>
             </ul>
@@ -98,10 +98,6 @@ if(!isset($_SESSION['admin'])){
             duration: 2500,
             delay: 400
         });
-        ScrollReveal().reveal('.sticky-header', {
-            delay: 100,
-            origin: 'top'
-        });
         ScrollReveal().reveal('.sidebar', {
             delay: 200,
             origin: 'left'
@@ -110,28 +106,6 @@ if(!isset($_SESSION['admin'])){
             delay: 200,
             origin: 'right'
         });
-
-        // const menuItems = document.querySelectorAll('.sidebar li a');
-        // const contentSections = document.querySelectorAll('.content > div');
-
-        // menuItems.forEach(item => {
-        //     item.addEventListener('click', function(event) {
-        //         event.preventDefault();
-
-        //         const targetId = this.getAttribute('href');
-        //         const targetSection = document.querySelector(targetId);
-
-        //         if (targetSection) {
-        //             contentSections.forEach(section => {
-        //                 if (section === targetSection) {
-        //                     section.style.display = 'block';
-        //                 } else {
-        //                     section.style.display = 'none';
-        //                 }
-        //             });
-        //         }
-        //     });
-        // });
 
         const menuItems = document.querySelectorAll('.sidebar li a');
         const contentSections = document.querySelectorAll('.content > div');
@@ -153,13 +127,13 @@ if(!isset($_SESSION['admin'])){
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
-            contentSections.forEach(section => {
-                if (section === targetSection) {
-                section.style.display = 'block';
-                } else {
-                section.style.display = 'none';
-                }
-            });
+                contentSections.forEach(section => {
+                    if (section === targetSection) {
+                            section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                })
             }
         });
         });

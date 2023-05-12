@@ -1,12 +1,15 @@
 <?php
 @include 'config.php';
 session_start();
-if(!isset($_SESSION['admin']) && !isset($_SESSION['user'])){
+if(!isset($_SESSION['admin']) && !isset($_SESSION['member'])){
    header('location:Login.php');
    exit;
 }
 
+$email = isset($_SESSION["admin"]) ? $_SESSION["admin"] : $_SESSION["member"];
+
 if(isset($_POST['Submit'])){
+    $acc = $_POST['account'];
     $fname = $_POST['fnameid'];
     $lname = $_POST['lnameid'];
     $mname = $_POST['mnameid'];
@@ -39,8 +42,8 @@ if(isset($_POST['Submit'])){
     $message = $_POST['messageid'];
     $status = $_POST['status'];
         
-    $insert_request = mysqli_query($conn, "INSERT INTO `request_id`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `blood_type`, `tin`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `em_first_name`, `em_last_name`, `em_middle_name`, `em_suffix_name`, `em_contact`, `em_relationship`, `em_address`, `schedule`, `time`, `slot`, `message`, `status`) 
-    VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$blood','$tin','$occupation','$phone','$email','$address','$street','$brgy','$city','$efname','$elname','$emname','$esname','$ephone','$relationship','$eaddress','$sched','$time','$slot','$message','$status')");
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_id`(`acount`, `first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `blood_type`, `tin`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `em-first_name`, `em-last_name`, `em-middle_name`, `em-suffix_name`, `em-contact`, `em-relationship`, `em-address`, `sched`, `time`, `slot`, `message`, `status`) 
+    VALUES ('$acc','$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$blood','$tin','$occupation','$phone','$email','$address','$street','$brgy','$city','$efname','$elname','$emname','$esname','$ephone','$relationship','$eaddress','$sched','$time','$slot','$message','$status')");
 
     if ($insert_request) {
         echo "<script>alert('Success submitting request.');</script>";
@@ -48,6 +51,16 @@ if(isset($_POST['Submit'])){
     } else {
         echo "<script>alert('Error submitting request.');</script>";
     }
+}
+
+$sql = "SELECT * FROM request_id ORDER BY id DESC LIMIT 1";
+$result = $conn->query($sql) or die($conn->error);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $lastSlot = !empty($row['slot']) && $row['slot'] !== '1' ? ($row['slot'] - 1) % 11 : 10; // Decrement or set to 10
+} else {
+    $lastSlot = 0;
 }
 ?>
 
@@ -58,7 +71,7 @@ if(isset($_POST['Submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barangayid</title>
+    <title>Mapulang Lupa | Barangay ID</title>
     <link rel="stylesheet" href="main.css">
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
@@ -66,23 +79,23 @@ if(isset($_POST['Submit'])){
 <body>
     <header class="sticky-header">
         <div class="logo">
-            <a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">
+            <a href="mapulanglupa.php">
                 <img src="images/logo.jpg" alt="Logo">
             </a>
         </div>
 
         <nav>
             <ul>
-                <li><a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">HOME</a></li>
+                <li><a href="mapulanglupa.php">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="<?php echo isset($_SESSION['admin']) ? 'certificaterequest.php' : 'request.php'; ?>"><?php echo isset($_SESSION['admin']) ? 'REQUEST' : 'SERVICES'; ?></a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'request.php' : 'services.php'; ?>"><?php echo isset($_SESSION['admin']) ? 'REQUEST' : 'SERVICES'; ?></a></li>
                 <li><a href="<?php echo isset($_SESSION['admin']) ? 'dashboard.php' : '#'; ?>"><?php echo isset($_SESSION['admin']) ? 'DASHBOARD' : 'CONTACT'; ?></a></li>
                 <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
 
-    <a href="certificaterequest.php" class="back-link"><h4>< BACK</h4></a>
+    <a href="request.php" class="back-link"><h4>< BACK</h4></a>
 
     <div class="clearanceformidBG">
     <div class="clearanceformid">
@@ -91,6 +104,9 @@ if(isset($_POST['Submit'])){
 
         <form action="#" method="post">
             <h2 class="info-id">Personal Information</h2>
+
+            <input type="email" id="account" name="account" value="<?php echo $email; ?>" >
+            <!-- not visible to the user -->
 
             <label for="fnameid" id="firstname-id"><font color="red">*</font>First Name: </label>
             <input type="text" name= "fnameid" id="fnameid" onkeyup="this.value = this.value.toUpperCase();" required>
@@ -146,7 +162,18 @@ if(isset($_POST['Submit'])){
             </select>
 
             <label for="bloodtypeid" id="bdtype-id">Blood Type: <small>(If Applicabble)</small></label><br>
-            <input type="text" id="bloodtypeid" name="bloodtypeid" required><br><br>
+            <select type="text" id="bloodtypeid" name="bloodtypeid" required>
+                <option value="" selected disabled>SELECT</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="N/A">N/A</option>
+            </select>
 
             <label for="TINid" id="tin-id">TIN: <small>(If Applicable)</small></label>
             <input type="text" id="TINid" name="TINid" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXX-XXXX">
@@ -157,8 +184,8 @@ if(isset($_POST['Submit'])){
             <label for="phoneid" id="cp-id"><font color="red">*</font>Contact No:</label>
             <input type="tel" id="phoneid" name="phoneid" placeholder="09XX XXX XXXX" required>
 
-            <label for="emailid" id="eadd-id">Email Address: <small>(Optional)</small></label>
-            <input type="email" id="emailid" name="emailid">
+            <label for="emailid" id="eadd-id"><font color="red">*</font>Email Address:</label>
+            <input type="email" id="emailid" name="emailid" value="<?php echo $email; ?>" readonly>
 
             <label for="addressid" id="add-id">Address:</label>
             <input type="text" id="addressid" name="addressid" placeholder="house#, block, lot, unit, etc:" onkeyup="this.value = this.value.toUpperCase();">
@@ -245,10 +272,11 @@ if(isset($_POST['Submit'])){
             </select>
 
             <label for="slotid" id="slot-label-id">Available Slot's: </label>
-            <input type="text" name="slotid" id="slotid" readonly>
+            <input type="text" name="slotid" id="slotid" value="<?php echo $lastSlot; ?>" readonly>
             <label for="slot" id="slot-label1-id"><font color="red">/ 10</font></label>
 
             <input type="text" name="status" id="status" value="PENDING...">
+            <!-- not visible to the user -->
 
             <label for="messageid" id="msg-id">Message: <small>(Optional)</small></label>
             <textarea id="messageid" name="messageid" rows="4" cols="50"></textarea>
@@ -273,10 +301,6 @@ if(isset($_POST['Submit'])){
             distance: '30px',
             duration: 2500,
             delay: 400
-        });
-        ScrollReveal().reveal('.sticky-header', {
-            delay: 100,
-            origin: 'top'
         });
         ScrollReveal().reveal('.back-link', {
             delay: 300,

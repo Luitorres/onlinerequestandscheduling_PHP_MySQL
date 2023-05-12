@@ -2,34 +2,36 @@
 @include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
-
    $email = ($_POST['email']);
    $pass = ($_POST['password']);
 
    $sql = "SELECT * FROM `users` WHERE email='$email';";
    $result = mysqli_query($conn, $sql);
+   $hash = password_hash($pass, PASSWORD_DEFAULT);
 
    if ($row = mysqli_fetch_assoc($result)) {
       $hash = $row['password'];
-      if (password_verify($password, $hash)) {
-          // Login Successful
-          session_start();
-          if ($row['user_type'] == 'admin') {
-              $_SESSION["admin"] = $row["name"];
-              header('location: admin.php');
-              exit;
-          } elseif ($row['user_type'] == 'member') {
-              $_SESSION["user"] = $row["name"];
-              header('location: user.php');
-              exit;
-          }
-      } else {
-          // Login Failure
-          $error[] = 'Incorrect Email or Password!';
+      if (password_verify($pass, $hash)) {
+
+         // Login Successful
+         session_start();
+         if ($row['user_type'] == 'admin') {
+            $_SESSION["admin"] = $row["email"];
+            header('location: mapulanglupa.php');
+            exit;
+         } elseif ($row['user_type'] == 'member') {
+            $_SESSION["member"] = $row["email"];
+            header('location: mapulanglupa.php');
+            exit;
+         }
+      } // Login Failure
+      else {
+         $error[] = 'Incorrect email or password!';
       }
-  }
+   }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
    <title>Login Now!</title>
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style1.css">
-
+   <link rel="stylesheet" href="style1.css">
 </head>
 
 <body>

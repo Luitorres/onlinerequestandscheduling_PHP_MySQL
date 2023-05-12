@@ -1,23 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-:root{
-   --blue:#2980b9;
-   --red:tomato;
-   --orange:orange;
-   --black:#333;
-   --white:#fff;
-   --bg-color:#eee;
-   --dark-bg:rgba(0,0,0,.7);
-   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
-   --border:.1rem solid #999;
-}
-
 *{
    font-family: 'Poppins', sans-serif;
    margin:0; padding:0;
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
+}
+
+body{
+   overflow-x: hidden;
+   background:  url(images/barangay.jpg);
+   background-size: cover;
+   min-height: 100%;
 }
 
 .form-container{
@@ -27,12 +22,11 @@
    justify-content: center;
    padding:20px;
    padding-bottom: 60px;
-   background: #eee;
 }
 
 .form-container form{
    padding:20px;
-   border-radius: 5px;
+   border-radius: 10px;
    box-shadow: 0 5px 10px rgba(0,0,0,.1);
    background: #fff;
    text-align: center;
@@ -51,8 +45,8 @@
    padding:10px 15px;
    font-size: 17px;
    margin:8px 0;
-   background: #eee;
-   border-radius: 5px;
+   background: rgba(204, 204, 204, 0.85);
+   border-radius: 10px;
 }
 
 .form-container form select option{
@@ -60,25 +54,29 @@
 }
 
 .form-container form .form-btn{
-   background: #fbd0d9;
-   color:crimson;
+   background: rgba(33, 33, 33, 0.5);
+   color: black;
    font-size: 20px;
    cursor: pointer;
 }
 
 .form-container form .form-btn:hover{
-   background: crimson;
-   color:#fff;
+   background-color: rgba(43, 101, 236, 0.5);
 }
 
 .form-container form p{
    margin-top: 10px;
    font-size: 20px;
-   color:#333;
+   color:black;
 }
 
 .form-container form p a{
-   color:crimson;
+   color: #333;
+   font-weight: 500;
+}
+
+.form-container form p a:hover{
+   color: rgba(43, 101, 236, 0.5);
 }
 
 .form-container form .error-msg{

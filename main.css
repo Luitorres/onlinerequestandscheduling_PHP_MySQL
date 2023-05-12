@@ -79,7 +79,6 @@ nav a:hover {
 
 .back-link:hover {
     color: #909090;
-    transform: scale(1.1);
 }
 
 .imageid {
@@ -268,13 +267,13 @@ nav a:hover {
 }
 
 .CertificateListBG {
-    height: 800px;
+    height: 100%;
 }
 
 .CertificateRequest {
     position: absolute;
     width: 80%;
-    height: 606px;
+    height: 75%;
     left: 10%;
     top: 20%;
     background: #FFFFFF;
@@ -393,6 +392,10 @@ nav a:hover {
     font-family: Arial, Helvetica, sans-serif;
     top: 605px;
     left: 3%;
+}
+
+#account {
+    display: none;
 }
 
 #fname {
@@ -899,7 +902,7 @@ nav a:hover {
 #slot-label1 {
     position: absolute;
     left: 47.5%;
-    top: 695px;
+    top: 693px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -1265,7 +1268,7 @@ nav a:hover {
 
 #PWDid {
     position: absolute;
-    width: 10%;
+    width: 11%;
     height: 45px;
     left: 40%;
     top: 320px;
@@ -1277,7 +1280,7 @@ nav a:hover {
 
 #bdtype-id {
     position: absolute;
-    left: 53%;
+    left: 54%;
     top: 290px;
     font-family: 'Arial';
     font-style: normal;
@@ -1292,7 +1295,7 @@ nav a:hover {
     position: absolute;
     width: 10%;
     height: 45px;
-    left: 52%;
+    left: 53%;
     top: 320px;
     background: rgba(204, 204, 204, 0.85);
     border-radius: 10px;
@@ -1753,7 +1756,7 @@ nav a:hover {
 #slot-label1-id {
     position: absolute;
     left: 47.5%;
-    top: 1052px;
+    top: 1053px;
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -1895,13 +1898,14 @@ nav a:hover {
 }
   
 .sidebar li a:hover {
+    transform: scale(1.1);
     background-color: #ffffff;
     border-radius: 3px;
 }
   
 .content {
     margin-left: 15%;
-    height: auto; /* Adjust this height based on your content */
+    height: 82%;
     position: absolute;
     width: 83%;
     top: 16%;

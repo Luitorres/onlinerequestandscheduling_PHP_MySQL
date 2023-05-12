@@ -1,11 +1,8 @@
 <?php
-
 @include 'config.php';
-
 session_start();
 session_unset();
 session_destroy();
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +20,7 @@ session_destroy();
 <body>
     <header class="sticky-header">
         <div class="logo">
-            <a href="index.php">
+            <a href="#">
                 <img src="images/logo.jpg" alt="Logo">
             </a>
         </div>

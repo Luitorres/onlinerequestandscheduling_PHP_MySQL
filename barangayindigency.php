@@ -1,12 +1,15 @@
 <?php
 @include 'config.php';
 session_start();
-if(!isset($_SESSION['admin']) && !isset($_SESSION['user'])){
+if(!isset($_SESSION['admin']) && !isset($_SESSION['member'])){
    header('location:Login.php');
    exit;
 }
 
+$email = isset($_SESSION["admin"]) ? $_SESSION["admin"] : $_SESSION["member"];
+
 if(isset($_POST['Submit'])){
+    $acc = $_POST['account'];
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $mname = $_POST['mname'];
@@ -30,8 +33,8 @@ if(isset($_POST['Submit'])){
     $message = $_POST['message'];
     $status = $_POST['status'];
         
-    $insert_request = mysqli_query($conn, "INSERT INTO `request_indigency`(`first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `schedule`, `time`,`slot`, `message`, `status`) 
-    VALUES ('$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_indigency`(`account`, `first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `sched`, `time`, `slot`, `message`, `status`) 
+    VALUES ('$acc','$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
 
     if ($insert_request) {
         echo "<script>alert('Success submitting request.');</script>";
@@ -39,6 +42,16 @@ if(isset($_POST['Submit'])){
     } else {
         echo "<script>alert('Error submitting request.');</script>";
     }
+}
+
+$sql = "SELECT * FROM request_indigency ORDER BY id DESC LIMIT 1";
+$result = $conn->query($sql) or die($conn->error);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $lastSlot = !empty($row['slot']) && $row['slot'] !== '1' ? ($row['slot'] - 1) % 11 : 10; // Decrement or set to 10
+} else {
+    $lastSlot = 0;
 }
 ?>     
 
@@ -49,7 +62,7 @@ if(isset($_POST['Submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barangay Indigency</title>
+    <title>Mapulang Lupa | Barangay Indigency</title>
     <link rel="stylesheet" href="main.css">
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
@@ -57,30 +70,33 @@ if(isset($_POST['Submit'])){
 <body>
     <header class="sticky-header">
         <div class="logo">
-            <a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">
+            <a href="mapulanglupa.php">
                 <img src="images/logo.jpg" alt="Logo">
             </a>
         </div>
         <nav>
             <ul>
-                <li><a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">HOME</a></li>
+                <li><a href="mapulanglupa.php">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="<?php echo isset($_SESSION['admin']) ? 'certificaterequest.php' : 'request.php'; ?>"><?php echo isset($_SESSION['admin']) ? 'REQUEST' : 'SERVICES'; ?></a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'request.php' : 'services.php'; ?>"><?php echo isset($_SESSION['admin']) ? 'REQUEST' : 'SERVICES'; ?></a></li>
                 <li><a href="<?php echo isset($_SESSION['admin']) ? 'dashboard.php' : '#'; ?>"><?php echo isset($_SESSION['admin']) ? 'DASHBOARD' : 'CONTACT'; ?></a></li>
                 <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
 
-    <a href="certificaterequest.php" class="back-link"><h4>< BACK</h4></a>
+    <a href="request.php" class="back-link"><h4>< BACK</h4></a>
 
     <div class="clearanceformBG">
     <div class="clearanceform">
         <h2 class="namerequest">Barangay Indigency</h2>
         <hr class="lining">
 
-        <form action="#" method="post">
+        <form action="#" method="post" id="myForm">
             <h2 class="info">Personal Information</h2>
+
+            <input type="email" id="account" name="account" value="<?php echo $email; ?>" >
+            <!-- not visible to the user -->
 
             <label for="fname" id="firstname"><font color="red">*</font>First Name: </label>
             <input type="text" name= "fname" id="fname" onkeyup="this.value = this.value.toUpperCase();" required>
@@ -141,8 +157,8 @@ if(isset($_POST['Submit'])){
             <label for="phone" id="cp"><font color="red">*</font>Contact No:</label>
             <input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" required>
 
-            <label for="email" id="eadd">Email Address: (Optional)</label>
-            <input type="email" id="email" name="email">
+            <label for="email" id="eadd">Email Address:<small>(Optional)</small></label>
+            <input type="email" id="email" name="email" value="<?php echo $email; ?>" >
 
             <label for="address" id="add">Address:</label>
             <input type="text" id="address" name="address" placeholder="house#, block, lot, unit, etc:" onkeyup="this.value = this.value.toUpperCase();">
@@ -206,10 +222,11 @@ if(isset($_POST['Submit'])){
             </select>
 
             <label for="slot" id="slot-label">Available Slot's: </label>
-            <input type="text" name="slot" id="slot" readonly>
+            <input type="text" name="slot" id="slot" value="<?php echo $lastSlot; ?>" readonly>
             <label for="slot" id="slot-label1"><font color="red">/ 10</font></label>
 
             <input type="text" name="status" id="status" value="PENDING...">
+            <!-- not visible to the user -->
 
             <label for="message" id="msg">Message: (Optional)</label>
             <textarea id="message" name="message" rows="4" cols="50"></textarea>
@@ -235,10 +252,6 @@ if(isset($_POST['Submit'])){
             distance: '30px',
             duration: 2500,
             delay: 400
-        });
-        ScrollReveal().reveal('.sticky-header', {
-            delay: 100,
-            origin: 'top'
         });
         ScrollReveal().reveal('.back-link', {
             delay: 300,

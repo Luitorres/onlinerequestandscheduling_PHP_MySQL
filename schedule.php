@@ -1,22 +1,18 @@
 <?php
 @include 'config.php';
 session_start();
-if(!isset($_SESSION['admin']) && !isset($_SESSION['user'])){
+if(!isset($_SESSION['admin']) && !isset($_SESSION['member'])){
    header('location:Login.php');
    exit;
 }
 
-// $database = "sbit3n_db";
+if($conn->connect_error){
+    echo $con->connect_error;
+}
 
-// $con = new mysqli($database);
-
-// if($con->connect_error){
-//     echo $con->connect_error;
-// }
-
-// $sql = "SELECT * FROM request_cedula";
-// $request = $con->query($sql) or die ($con->error);
-// $row = $request->fetch_assoc();
+$sql = "SELECT * FROM request_id";
+$request = $conn->query($sql) or die ($conn->error);
+$row = $request->fetch_assoc();
 
 // print_r($row);
 ?>
@@ -34,22 +30,20 @@ if(!isset($_SESSION['admin']) && !isset($_SESSION['user'])){
 <body>
     <header class="sticky-header">
         <div class="logo">
-            <a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">
-                <img src="images/logo.jpg" alt="Logo">
-            </a>
+            <a href="mapulanglupa.php"><img src="images/logo.jpg" alt="Logo"></a>
         </div>
         <nav>
             <ul>
-                <li><a href="<?php echo isset($_SESSION['admin']) ? 'admin.php' : 'user.php'; ?>">HOME</a></li>
+                <li><a href="mapulanglupa.php">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
-                <li><a href="<?php echo isset($_SESSION['admin']) ? 'certificaterequest.php' : 'request.php'; ?>"><?php echo isset($_SESSION['admin']) ? 'REQUEST' : 'SERVICES'; ?></a></li>
+                <li><a href="<?php echo isset($_SESSION['admin']) ? 'request.php' : 'services.php'; ?>"><?php echo isset($_SESSION['admin']) ? 'REQUEST' : 'SERVICES'; ?></a></li>
                 <li><a href="<?php echo isset($_SESSION['admin']) ? 'dashboard.php' : '#'; ?>"><?php echo isset($_SESSION['admin']) ? 'DASHBOARD' : 'CONTACT'; ?></a></li>
                 <li><a href="index.php">LOGOUT</a></li>
             </ul>
         </nav>
     </header>
 
-    <a href="user.php" class="back-link"><h4>< BACK</h4></a>
+    <a href="<?php echo isset($_SESSION['admin']) ? 'mapulanglupa.php' : 'services.php'; ?>" class="back-link"><h4>< BACK</h4></a>
 
     <div class="clearanceformBG">
     <div class="certificatesched">
