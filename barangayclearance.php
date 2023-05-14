@@ -44,14 +44,14 @@ if(isset($_POST['Submit'])){
     }
 }
 
-$sql = "SELECT * FROM request_clearance ORDER BY id DESC LIMIT 1";
+$sql = "SELECT * FROM request_cedula ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql) or die($conn->error);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $lastSlot = !empty($row['slot']) && $row['slot'] !== '1' ? ($row['slot'] - 1) % 11 : 10; // Decrement or set to 10
+    $lastSlot = !empty($row['slot']) && $row['slot'] !== '10' ? ($row['slot'] + 1) % 11 : 1; // Increment or set to 1
 } else {
-    $lastSlot = 0;
+    $lastSlot = 10;
 }
 ?>       
 
@@ -231,7 +231,7 @@ if ($result->num_rows > 0) {
             <label for="message" id="msg">Message: (Optional)</label>
             <textarea id="message" name="message" rows="4" cols="50"></textarea>
 
-            <input type="button" id="cancel" value="CANCEL" onclick="window.location='user.php'" />
+            <input type="button" id="cancel" value="CANCEL" onclick="window.location='request.php'" />
             <input type="submit" name="Submit" id="Submit" value="SUBMIT">
         </form>
 

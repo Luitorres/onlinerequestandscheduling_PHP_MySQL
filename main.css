@@ -299,10 +299,6 @@ nav a:hover {
     color: rgba(43, 101, 236, 0.5);
 }
 
-.clearanceformBG{
-    height: 1300px;
-}
-
 .clearanceform {
     position: absolute;
     width: 80%;
@@ -1835,17 +1831,6 @@ nav a:hover {
     background-color: #4BBA41;
 }
 
-.certificatesched {
-    position: absolute;
-    width: 80%;
-    height: 606px;
-    left: 10%;
-    top: 20%;
-    background: #FFFFFF;
-    border-radius: 10px;
-    text-decoration: none;
-}
-
 .CertificateSchedule {
     font-family: 'Arial';
     font-style: normal;
@@ -1913,4 +1898,116 @@ nav a:hover {
     background: #FFFFFF;
     opacity: 0.9;
     border-radius: 10px; 
+}
+
+.tableHead {
+    position: absolute;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    top: 15%;
+    width: 100%;
+    z-index: 1;
+}
+.tableHead1 {
+    position: absolute;
+    background: #FFFFFF;
+    width: 100%;
+    padding-left: 5%;
+    padding-bottom: 5px;
+}
+
+.tableHead2 {
+    position: absolute;
+    right: 11%;
+    padding-bottom: 5px;
+}
+
+.scheduleHead {
+    position: absolute;
+    width: 80%;
+    height: 75%;
+    left: 10%;
+    top: 20%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.scheduleContent { 
+    overflow-y: scroll;
+    position: absolute;
+    height: 80%;
+    top: 16%;
+    left: 3%;
+    width: 95%;
+}
+
+.scheduleContent::-webkit-scrollbar {
+    width: 0.6rem;
+    height: 0.6rem;
+}
+
+.scheduleContent::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.scheduleContent:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.headRow {
+    background: rgba(204, 204, 204, 0.85);
+    height: 25px;
+}
+
+.bodyRow {
+    background: rgba(204, 204, 204, 0.85);
+}
+
+.spaceRow {
+    background: #FFFFFF;
+    padding: 0 0 0 10px;
+}
+
+
+.bodyRow:hover .infoRow {
+    background-color: lightskyblue;
+  }
+  
+  .bodyRow:hover .schedRow[value="PENDING..."] {
+    background-color: rgb(255, 190, 69);
+  }
+  
+  .bodyRow:hover .schedRow[value="APPROVED"] {
+    background-color: rgb(70, 204, 70);
+  }
+  
+  .bodyRow:hover .schedRow[value="CANCELED"],
+  .bodyRow:hover .schedRow[value="DECLINED"] {
+    background-color: rgb(255, 91, 91);
+  }
+  
+.infoRow {
+    padding: 15px 0 15px 20px;
+    border-radius: 10px;
+}
+
+.schedRow {
+    padding: 15px 0 15px 20px;
+    border-radius: 10px;
+}
+
+.requestRow {
+    font-family:'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    height: 30px;
 }

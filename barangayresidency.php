@@ -33,7 +33,7 @@ if(isset($_POST['Submit'])){
     $message = $_POST['message'];
     $status = $_POST['status'];
         
-    $insert_request = mysqli_query($conn, "INSERT INTO `request_recidency`(`account`, `first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `sched`, `time`, `slot`, `message`, `status`) 
+    $insert_request = mysqli_query($conn, "INSERT INTO `request_residency`(`account`, `first_name`, `last_name`, `middle_name`, `suffix_name`, `birthday`, `place_of_birth`, `civil_status`, `sex`, `nationality`, `pwd`, `occupation`, `contact`, `email`, `address`, `street`, `barangay`, `city`, `sched`, `time`, `slot`, `message`, `status`) 
     VALUES ('$acc','$fname','$lname','$mname','$sname','$nbirthday','$placeofbirth','$civil','$sex','$nationality','$pwd','$occupation','$phone','$email','$address','$street','$brgy','$city','$sched','$time','$slot','$message','$status')");
 
     if ($insert_request) {
@@ -44,14 +44,14 @@ if(isset($_POST['Submit'])){
     }
 }
 
-$sql = "SELECT * FROM request_recidency ORDER BY id DESC LIMIT 1";
+$sql = "SELECT * FROM request_cedula ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql) or die($conn->error);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $lastSlot = !empty($row['slot']) && $row['slot'] !== '1' ? ($row['slot'] - 1) % 11 : 10; // Decrement or set to 10
+    $lastSlot = !empty($row['slot']) && $row['slot'] !== '10' ? ($row['slot'] + 1) % 11 : 1; // Increment or set to 1
 } else {
-    $lastSlot = 0;
+    $lastSlot = 10;
 }
 ?>      
 
@@ -230,7 +230,7 @@ if ($result->num_rows > 0) {
             <label for="message" id="msg">Message: (Optional)</label>
             <textarea id="message" name="message" rows="4" cols="50"></textarea>
 
-            <input type="button" id="cancel" value="CANCEL" onclick="window.location='user.php'" />
+            <input type="button" id="cancel" value="CANCEL" onclick="window.location='request.php'" />
             <input type="submit" name="Submit" id="Submit" value="SUBMIT">
         </form>
 
