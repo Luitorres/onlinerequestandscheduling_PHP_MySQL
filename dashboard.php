@@ -4,6 +4,31 @@ session_start();
 if(!isset($_SESSION['admin'])){
    header('location:Login.php');
 };
+
+if($conn->connect_error){
+    echo $conn->connect_error;
+}
+
+$cedula = "SELECT * FROM request_cedula";
+$clearance = "SELECT * FROM request_clearance";
+$goodmoral = "SELECT * FROM request_goodmoral";
+$barangayid = "SELECT * FROM request_id";
+$indigency = "SELECT * FROM request_indigency";
+$residency = "SELECT * FROM request_residency";
+
+$cedulaResult = $conn->query($cedula) or die($conn->error);
+$clearanceResult = $conn->query($clearance) or die($conn->error);
+$goodmoralResult = $conn->query($goodmoral) or die($conn->error);
+$barangayidResult = $conn->query($barangayid) or die($conn->error);
+$indigencyResult = $conn->query($indigency) or die($conn->error);
+$residencyResult = $conn->query($residency) or die($conn->error);
+
+$cedulaRow = $cedulaResult->fetch_assoc();
+$clearanceRow = $clearanceResult->fetch_assoc();
+$goodmoralRow = $goodmoralResult->fetch_assoc();
+$barangayidRow = $barangayidResult->fetch_assoc();
+$indigencyRow = $indigencyResult->fetch_assoc();
+$residencyRow = $residencyResult->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -38,12 +63,16 @@ if(!isset($_SESSION['admin'])){
 
     <div class="sidebar">
         <ul>
-            <li><a href="#cedula_section">Cedula</a></li>
-            <li><a href="#clearance_section">Clearance</a></li>
-            <li><a href="#goodmoral_section">Good Moral</a></li>
-            <li><a href="#barangayid_section">Barangay ID</a></li>
-            <li><a href="#indigency_section">Indigency</a></li>
-            <li><a href="#residency_section">Residency</a></li>
+            <li><a href="pendingcedula.php">Cedula</a></li>
+            <li><a href="pendingclearance.php">Clearance</a></li>
+            <li><a href="pendinggoodmoral.php">Good Moral</a></li>
+            <li><a href="pendingbarangayid.php">Barangay ID</a></li>
+            <li><a href="pendingindigency.php">Indigency</a></li>
+            <li><a href="pendingresidency.php">Residency</a></li>
+            <li><a class="space_section"></a></li>
+            <li><a href="certificateapprove.php">Approve</a></li>
+            <li><a href="certificatecancel.php">Cancel</a></li>
+            <li><a href="certificatedecline.php">Decline</a></li>
         </ul>
     </div>
 
@@ -52,42 +81,6 @@ if(!isset($_SESSION['admin'])){
             <h2 class="namerequest">Default Section</h2>
             <hr class="lining">
             <!-- Content of the default section goes here -->
-        </div>
-
-        <div class="cedula" id="cedula_section">
-            <h2 class="namerequest">Barangay Cedula</h2>
-            <hr class="lining">
-            <!-- Content of the cedula section goes here -->
-        </div>
-
-        <div class="clearance" id="clearance_section">
-            <h2 class="namerequest">Barangay Clearance</h2>
-            <hr class="lining">
-            <!-- Content of the clearance section goes here -->
-        </div>
-
-        <div class="goodmoral" id="goodmoral_section">
-            <h2 class="namerequest">Barangay Certificate of Good Moral Character</h2>
-            <hr class="lining">
-            <!-- Content of the good moral section goes here -->
-        </div>
-        
-        <div class="barangayid" id="barangayid_section">
-            <h2 class="namerequest">Barangay ID</h2>
-            <hr class="lining">
-            <!-- Content of the barangay ID section goes here -->
-        </div>
-
-        <div class="indigency" id="indigency_section">
-            <h2 class="namerequest">Barangay Indigency</h2>
-            <hr class="lining">
-            <!-- Content of the indigency section goes here -->
-        </div>
-        
-        <div class="residency" id="residency_section">
-            <h2 class="namerequest">Barangay Residency</h2>
-            <hr class="lining">
-            <!-- Content of the residency section goes here -->
         </div>
     </div>
 
@@ -105,37 +98,6 @@ if(!isset($_SESSION['admin'])){
         ScrollReveal().reveal('.content', {
             delay: 200,
             origin: 'right'
-        });
-
-        const menuItems = document.querySelectorAll('.sidebar li a');
-        const contentSections = document.querySelectorAll('.content > div');
-
-        // Hide all content sections except for the default section
-        contentSections.forEach(section => {
-        if (section.id === 'landing_section') {
-            section.style.display = 'block';
-        } else {
-            section.style.display = 'none';
-        }
-        });
-
-        menuItems.forEach(item => {
-        item.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            if (targetSection) {
-                contentSections.forEach(section => {
-                    if (section === targetSection) {
-                            section.style.display = 'block';
-                    } else {
-                        section.style.display = 'none';
-                    }
-                })
-            }
-        });
         });
     </script>
 </body>

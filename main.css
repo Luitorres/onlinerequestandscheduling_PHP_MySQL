@@ -1867,10 +1867,6 @@ nav a:hover {
     padding: 0;
 }
   
-.sidebar li {
-    margin-bottom: 0.5rem;
-}
-  
 .sidebar li a {
     display: block;
     color: #333;
@@ -1880,6 +1876,11 @@ nav a:hover {
     transition: all 0.2s ease-in-out;
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.sidebar li .space_section:hover {
+    background-color: transparent #333;
+    opacity: 0.1;
 }
   
 .sidebar li a:hover {
@@ -1911,13 +1912,19 @@ nav a:hover {
     position: absolute;
     background: #FFFFFF;
     width: 100%;
-    padding-left: 5%;
+    padding-left: 4%;
     padding-bottom: 5px;
 }
 
 .tableHead2 {
     position: absolute;
-    right: 11%;
+    left: 75%;
+    padding-bottom: 5px;
+}
+
+.tableHead3 {
+    position: absolute;
+    left: 87%;
     padding-bottom: 5px;
 }
 
@@ -1974,11 +1981,12 @@ table {
 
 .spaceRow {
     background: #FFFFFF;
-    padding: 0 0 0 10px;
+    padding: 0 0 0 5px;
 }
 
 
-.bodyRow:hover .infoRow {
+.bodyRow:hover .infoRow,
+.bodyRow:hover .messageRow {
     background-color: lightskyblue;
   }
   
@@ -2000,9 +2008,16 @@ table {
     border-radius: 10px;
 }
 
+.messageRow {
+    padding: 15px 0 15px 20px;
+    border-radius: 10px;
+    width: 12%;
+}
+
 .schedRow {
     padding: 15px 0 15px 20px;
     border-radius: 10px;
+    width: 12%;
 }
 
 .requestRow {

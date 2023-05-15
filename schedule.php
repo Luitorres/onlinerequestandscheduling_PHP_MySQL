@@ -116,7 +116,7 @@ $residencyRow = $residencyResult->fetch_assoc();
             <tr class="headRow"></tr>
             <tr class="bodyRow">
                 <td class="infoRow">
-                <p class="requestRow">Barangay Good Moral</p>
+                <p class="requestRow">Barangay Certificate of Good Moral Character</p>
                 <?php echo $goodmoralRow['last_name'] . ", " . $goodmoralRow['first_name'] . " " . $goodmoralRow['middle_name'] . " " . $goodmoralRow['suffix_name']; ?><br>
                 <?php echo $goodmoralRow['address'] . " " . $goodmoralRow['street'] . ", " . $goodmoralRow['barangay'] . " " . $goodmoralRow['city']; ?><br>
                 <?php echo $goodmoralRow['contact']; ?><br>
